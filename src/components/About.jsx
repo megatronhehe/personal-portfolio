@@ -29,24 +29,30 @@ const About = () => {
 
 					<div>
 						<h2 className="mb-4 font-semibold">Tech stacks</h2>
-						<div className="flex justify-between p-2 text-2xl bg-white sm:text-4xl rounded-xl">
-							<div>
-								<FaHtml5 color="orange" />
+						<div className="flex flex-wrap justify-between p-4 text-2xl bg-white sm:text-4xl rounded-xl">
+							<div className="flex flex-col items-center text-orange-500">
+								<FaHtml5 />
+								<p className="text-xs font-bold ">HTML</p>
 							</div>
-							<div>
-								<FaCss3Alt color="blue" />
+							<div className="flex flex-col items-center text-blue-700">
+								<FaCss3Alt />
+								<p className="text-xs font-bold">CSS</p>
 							</div>
-							<div>
-								<FaJsSquare color="orange" />
+							<div className="flex flex-col items-center text-yellow-400">
+								<FaJsSquare />
+								<p className="text-xs font-bold">JavaScript</p>
 							</div>
-							<div>
-								<FaReact color="lightblue" />
+							<div className="flex flex-col items-center text-blue-300">
+								<FaReact />
+								<p className="text-xs font-bold">ReactJS</p>
 							</div>
-							<div>
-								<BiLogoTailwindCss color="purple" />
+							<div className="flex flex-col items-center text-purple-500">
+								<BiLogoTailwindCss />
+								<p className="text-xs font-bold">TailwindCSS</p>
 							</div>
-							<div>
-								<SiReactrouter color="red" />
+							<div className="flex flex-col items-center text-red-500">
+								<SiReactrouter />
+								<p className="text-xs font-bold">R.Router</p>
 							</div>
 						</div>
 					</div>
