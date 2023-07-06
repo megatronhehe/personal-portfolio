@@ -12,7 +12,7 @@ const Projects = () => {
 			<div className="max-w-xl p-8 xl:max-w-4xl ">
 				<div className="px-8 border-l-8 border-blue-500 ">
 					<div className="mb-8 ">
-						<h1 className="w-1/2 mb-4 font-bold">My Projects</h1>
+						<h1 className="w-1/2 mb-4 font-bold">: : My Projects</h1>
 
 						<p className="mb-4 text-sm text-justify">
 							these are some of my featured projects that i've built from

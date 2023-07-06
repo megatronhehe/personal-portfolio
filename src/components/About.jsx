@@ -13,7 +13,7 @@ const About = () => {
 			<div className="max-w-xl p-8 text-white xl:max-w-4xl ">
 				<div className="px-8 border-l-8 border-white ">
 					<div className="mb-4 ">
-						<h1 className="w-1/2 mb-4 font-bold">About me</h1>
+						<h1 className="w-1/2 mb-4 font-bold">: : About me</h1>
 
 						<p className="text-sm text-justify">
 							As a junior frontend React web developer, I have expertise in

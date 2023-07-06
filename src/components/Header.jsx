@@ -3,8 +3,8 @@ import React from "react";
 const Header = () => {
 	return (
 		<header className="flex flex-col items-center px-4 text-gray-500 sm:justify-between sm:flex-row sm:border-b">
-			<h1 className="w-full py-2 text-xl font-semibold tracking-wide text-center text-blue-500 border-b sm:border-none sm:w-0">
-				satya.dev
+			<h1 className="w-full py-2 text-xl tracking-wide text-center text-gray-500 border-b sm:border-none sm:w-0">
+				satya.<span className="text-blue-500">dev</span>
 			</h1>
 			<nav>
 				<ul className="flex text-sm sm:gap-8">
