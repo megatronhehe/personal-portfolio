@@ -29,7 +29,7 @@ const About = () => {
 
 					<div>
 						<h2 className="mb-4 font-semibold">Tech stacks</h2>
-						<div className="flex justify-between p-2 text-4xl bg-white rounded-xl">
+						<div className="flex justify-between p-2 text-2xl bg-white sm:text-4xl rounded-xl">
 							<div>
 								<FaHtml5 color="orange" />
 							</div>
