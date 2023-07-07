@@ -35,17 +35,21 @@ const Home = () => {
 
 						<div className="flex justify-between px-4 py-4 bg-gray-100 rounded-xl">
 							<div className="flex gap-4">
-								<div className="p-2 text-3xl text-blue-400 bg-white rounded-xl">
+								<a
+									href="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"
+									target="_blank"
+									className="p-2 text-3xl text-blue-400 bg-white rounded-xl"
+								>
 									<BsLinkedin />
-								</div>
-								<div className="p-2 text-3xl text-blue-400 bg-white rounded-xl">
+								</a>
+								<a
+									href="https://github.com/megatronhehe"
+									target="_blank"
+									className="p-2 text-3xl text-blue-400 bg-white rounded-xl"
+								>
 									<BsGithub />
-								</div>
+								</a>
 							</div>
-							<button className="flex items-center gap-4 px-4 text-sm text-white bg-blue-400 rounded-lg text-end">
-								<BsDownload />
-								resume
-							</button>
 						</div>
 					</div>
 				</div>

@@ -10,9 +10,9 @@ import {
 
 const Footer = () => {
 	return (
-		<div className="">
-			<div className="grid grid-cols-3 py-12 text-sm text-gray-200 bg-gray-600 p-y">
-				<div className="ml-2 border-r-4 border-blue-400 sm:ml-12">
+		<div>
+			<div className="flex justify-around px-8 py-12 text-white bg-gray-600">
+				<div className="pr-8 border-r border-blue-400">
 					<h1 className="mb-4 text-xl">
 						satya.<span className="text-blue-400">dev</span>
 					</h1>
@@ -29,32 +29,56 @@ const Footer = () => {
 						<li>contact</li>
 					</ul>
 				</div>
-				<div className="flex flex-col justify-between col-span-2">
-					<div className="text-center">: :</div>
-					<div className="text-center">
-						<p>"if failure makes you stronger, you can never lose"</p>
-						<p>- A. Tate</p>
+
+				<div className="pl-8">
+					<div className="flex flex-col justify-between h-full text-xs">
+						<div className="text-center">: :</div>
+						<div className="text-center">
+							<p>"if failure makes you stronger, you can never lose"</p>
+							<p>- A. Tate</p>
+						</div>
+						<div className="flex justify-center">
+							<ul className="flex items-end justify-around w-full py-4 text-2xl font-bold text-blue-400 sm:bg-gray-700 sm:max-w-sm rounded-xl sm:flex">
+								<li>
+									<a
+										href="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"
+										target="_blank"
+									>
+										<BsLinkedin />
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://discord.com/users/225262332157100034"
+										target="_blank"
+									>
+										<BsDiscord />
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/007satya_/"
+										target="_blank"
+									>
+										<BsInstagram />
+									</a>
+								</li>
+								<li>
+									<a href="https://wa.me/6282254103639" target="_blank">
+										<BsWhatsapp />
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/megatronhehe" target="_blank">
+										<BsGithub />
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<ul className="flex items-end justify-around text-2xl font-bold text-blue-400 sm:flex">
-						<li>
-							<BsLinkedin />
-						</li>
-						<li>
-							<BsDiscord />
-						</li>
-						<li>
-							<BsInstagram />
-						</li>
-						<li>
-							<BsWhatsapp />
-						</li>
-						<li>
-							<BsGithub />
-						</li>
-					</ul>
 				</div>
 			</div>
-			<h1 className="py-4 text-xs text-center text-gray-400 bg-gray-600">
+			<h1 className="p-4 text-xs text-center bg-gray-700 text-gray-5q00">
 				made with love by satya, well not really with love, mostly with fingers
 				- satya
 			</h1>

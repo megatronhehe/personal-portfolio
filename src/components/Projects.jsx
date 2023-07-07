@@ -23,10 +23,14 @@ const Projects = () => {
 						</p>
 						<p className="flex items-center gap-4 text-sm text-justify">
 							Check all of my projects on my
-							<button className="flex items-center gap-2 p-2 text-xl text-white bg-blue-400 rounded-xl">
+							<a
+								href="https://github.com/megatronhehe"
+								target="_blank"
+								className="flex items-center gap-2 p-2 text-xl text-white bg-blue-400 rounded-xl"
+							>
 								<BsGithub />
 								<p className="text-sm">GitHub</p>
-							</button>
+							</a>
 						</p>
 					</div>
 				</div>
