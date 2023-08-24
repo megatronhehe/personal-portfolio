@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import InfoModal from "./InfoModal";
+
 import {
 	PiCaretDownLight,
 	PiCaretUpLight,
@@ -15,6 +18,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 	const sectionsArray = ["home", "about", "contact"];
 
 	const [toggleNavbar, setToggleNavbar] = useState(false);
+	const [toggleInfoModal, setToggleInfoModal] = useState(false);
 
 	const nextSection = () => {
 		const newIndex = (sectionIndex + 1) % sectionsArray.length;
@@ -45,9 +49,9 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			<nav className="fixed z-40 bottom-1 right-1">
 				<button onClick={nextSection}>
 					{sectionIndex === sectionsArray.length - 1 ? (
-						<PiCaretDoubleUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md" />
+						<PiCaretDoubleUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					) : (
-						<PiCaretDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md" />
+						<PiCaretDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					)}
 				</button>
 			</nav>
@@ -55,9 +59,9 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			<nav className="fixed z-40 top-1 right-1">
 				<button onClick={prevSection}>
 					{sectionIndex === 0 ? (
-						<PiCaretDoubleDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md" />
+						<PiCaretDoubleDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					) : (
-						<PiCaretUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md" />
+						<PiCaretUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					)}
 				</button>
 			</nav>
@@ -66,33 +70,36 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 				<ul className="flex flex-col-reverse gap-2">
 					<li
 						onClick={() => setToggleNavbar((prev) => !prev)}
-						className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-white border shadow-md rounded-xl"
+						className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-white border shadow-md sm:h-20 sm:w-20 sm:text-4xl rounded-xl"
 					>
 						<PiSquaresFourFill />
 					</li>
 					{toggleNavbar && (
 						<>
-							<li className="flex items-center justify-center w-10 h-10 text-2xl text-white bg-gray-700 rounded-full shadow-md">
+							<li
+								onClick={() => setToggleInfoModal(true)}
+								className="flex items-center justify-center w-10 h-10 text-2xl text-white bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
+							>
 								<PiInfoLight />
 							</li>
 
 							<li
 								onClick={() => setSectionIndex(2)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md"
+								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
 							>
 								<PiEnvelopeLight />
 							</li>
 
 							<li
 								onClick={() => setSectionIndex(1)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md"
+								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
 							>
 								<PiUserLight />
 							</li>
 
 							<li
 								onClick={() => setSectionIndex(0)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md"
+								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
 							>
 								<PiHouseLight />
 							</li>
@@ -100,6 +107,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 					)}
 				</ul>
 			</nav>
+			{toggleInfoModal && <InfoModal setToggleInfoModal={setToggleInfoModal} />}
 		</>
 	);
 };
