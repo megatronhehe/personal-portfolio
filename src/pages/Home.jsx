@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import satya from "../assets/satyajpg2.jpg";
 
 import { BsLinkedin, BsGithub, BsDownload } from "react-icons/bs";
 import { PiDiamondsFourFill } from "react-icons/pi";
 
-const Home = () => {
+const Home = ({ setSectionIndex }) => {
+	useEffect(() => {
+		setSectionIndex(0);
+	}, []);
+
 	return (
 		<section
 			id="home"

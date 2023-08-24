@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Skills from "./Skills";
 import Projects from "./Projects";
 
 import { PiDiamondsFourFill } from "react-icons/pi";
 
-const About = () => {
+const About = ({ setSectionIndex }) => {
 	const [selected, setSelected] = useState("skills");
 
+	useEffect(() => {
+		setSectionIndex(1);
+	}, []);
+
 	return (
-		<section id="about" className="flex flex-col items-center pt-6 mb-40">
+		<section
+			id="about"
+			className="flex flex-col items-center pt-6 mb-40 sm:pt-16"
+		>
 			<div className="w-full max-w-3xl">
 				<nav className="relative flex justify-center w-full">
 					<PiDiamondsFourFill className="absolute -top-3.5 p-1 bg-white border rounded-full w-7 h-7" />

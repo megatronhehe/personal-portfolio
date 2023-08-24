@@ -18,8 +18,12 @@ import {
 	BsFillCaretUpFill,
 } from "react-icons/bs";
 
-const Contact = () => {
+const Contact = ({ setSectionIndex }) => {
 	const [quotesIndex, setQuotesIndex] = useState(0);
+
+	useEffect(() => {
+		setSectionIndex(2);
+	}, []);
 
 	const randomizeQuotesIndex = () => {
 		const randomNumber = Math.floor(Math.random() * quotesData.length);
@@ -35,11 +39,11 @@ const Contact = () => {
 		>
 			<div className="flex flex-col items-center justify-center gap-16">
 				<PiDiamondsFourFill />
-				<h1 className="text-3xl">Get in touch with me!</h1>
+				<h1 className="text-3xl sm:text-5xl">Get in touch with me!</h1>
 
 				<div className="flex flex-col items-center justify-center gap-2">
-					<h2>Social media</h2>
-					<ul className="flex gap-4 text-3xl">
+					<h2 className="sm:text-2xl">Social media</h2>
+					<ul className="flex gap-4 text-3xl sm:text-4xl">
 						<ContactButton
 							name="Ida Bagus Satya Mahendra"
 							icon={<BsLinkedin />}
@@ -56,8 +60,8 @@ const Contact = () => {
 				</div>
 
 				<div className="flex flex-col items-center justify-center gap-2">
-					<h2>General contact</h2>
-					<ul className="flex gap-4 text-3xl">
+					<h2 className="sm:text-2xl">General contact</h2>
+					<ul className="flex gap-4 text-3xl sm:text-4xl">
 						<ContactButton
 							name="satyamahendra09@gmail.com"
 							icon={<BsFillEnvelopeAtFill />}
@@ -70,7 +74,7 @@ const Contact = () => {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center justify-between text-xs text-gray-400 h-28">
+			<div className="flex flex-col items-center justify-between text-xs text-gray-400 sm:text-sm h-28">
 				<BsDiamond onClick={randomizeQuotesIndex} />
 				<p className="p-4 text-center">{selectedQuote.quote}</p>
 				<p>{selectedQuote.by}</p>
