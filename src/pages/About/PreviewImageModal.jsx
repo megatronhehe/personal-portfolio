@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { PiXLight, PiCaretLeft, PiCaretRight } from "react-icons/pi";
 
 const PreviewImageModal = ({ image, setToggleModal }) => {
@@ -16,7 +18,10 @@ const PreviewImageModal = ({ image, setToggleModal }) => {
 	};
 
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
 			onClick={() => setToggleModal(false)}
 			className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-gray-800 bg-opacity-80"
 		>
@@ -42,7 +47,7 @@ const PreviewImageModal = ({ image, setToggleModal }) => {
 			<div className="absolute px-4 py-2 text-sm text-white bg-gray-600 bg-opacity-75 rounded-full bottom-2">
 				{imageIndex + 1}/{image.length}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

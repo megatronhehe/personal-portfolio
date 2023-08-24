@@ -15,7 +15,6 @@ import {
 	BsWhatsapp,
 	BsGithub,
 	BsDiamond,
-	BsFillCaretUpFill,
 } from "react-icons/bs";
 
 const Contact = ({ setSectionIndex }) => {

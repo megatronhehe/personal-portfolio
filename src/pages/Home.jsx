@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import satya from "../assets/satyajpg2.jpg";
 
+import { motion } from "framer-motion";
+
 import { BsLinkedin, BsGithub, BsDownload } from "react-icons/bs";
 import { PiDiamondsFourFill } from "react-icons/pi";
 
@@ -38,13 +40,13 @@ const Home = ({ setSectionIndex }) => {
 			</div>
 
 			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 sm:w-1/3 sm:text-4xl">
-				<li>
+				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<BsLinkedin />
-				</li>
-				<li>
+				</motion.li>
+				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<BsGithub />
-				</li>
-				<li>
+				</motion.li>
+				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<a
 						href=""
 						className="flex items-center gap-2 px-3 py-2 text-sm text-white bg-blue-400 rounded-md sm:text-xl"
@@ -52,7 +54,7 @@ const Home = ({ setSectionIndex }) => {
 						resume
 						<BsDownload />
 					</a>
-				</li>
+				</motion.li>
 			</ul>
 		</section>
 	);

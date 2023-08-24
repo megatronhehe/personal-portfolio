@@ -3,7 +3,10 @@ import React, { useState, useEffect } from "react";
 import Skills from "./Skills";
 import Projects from "./Projects";
 
+import { motion } from "framer-motion";
+
 import { PiDiamondsFourFill } from "react-icons/pi";
+import { AnimatePresence } from "framer-motion";
 
 const About = ({ setSectionIndex }) => {
 	const [selected, setSelected] = useState("skills");
@@ -41,7 +44,16 @@ const About = ({ setSectionIndex }) => {
 					</ul>
 				</nav>
 
-				{selected === "skills" ? <Skills /> : <Projects />}
+				<AnimatePresence mode="wait">
+					<motion.div
+						key={selected}
+						initial={{ opacity: 0, y: -20 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -20 }}
+					>
+						{selected === "skills" ? <Skills /> : <Projects />}
+					</motion.div>
+				</AnimatePresence>
 			</div>
 		</section>
 	);

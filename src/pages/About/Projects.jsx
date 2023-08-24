@@ -4,6 +4,8 @@ import { projectData } from "../../data/projectsData";
 
 import ProjectCard from "./ProjectCard";
 
+import { motion } from "framer-motion";
+
 import { PiStackLight } from "react-icons/pi";
 import { BsGithub } from "react-icons/bs";
 
@@ -24,10 +26,12 @@ const Projects = () => {
 						The projects are purely made by me, my own design, my own code, my
 						own everything. Here are a few of my featured projects:
 					</p>
-					<button className="flex items-center justify-end w-full gap-2">
-						<p className="text-sm">check my repo!</p>
-						<BsGithub className="text-2xl" />
-					</button>
+					<div className="flex justify-center w-full mt-4 ">
+						<button className="flex items-center gap-2 p-2 border rounded-full hover:bg-gray-700 hover:text-white hover:border-white">
+							<p className="text-sm">check my repo!</p>
+							<BsGithub className="text-2xl" />
+						</button>
+					</div>
 				</div>
 			</div>
 

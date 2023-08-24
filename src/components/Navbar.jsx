@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import InfoModal from "./InfoModal";
 
 import {
@@ -46,68 +48,92 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 
 	return (
 		<>
-			<nav className="fixed z-40 bottom-1 right-1">
-				<button onClick={nextSection}>
+			<nav className="fixed z-40 bottom-2 right-2">
+				<motion.button
+					whileHover={{ scale: 1.1, y: -10 }}
+					onClick={nextSection}
+				>
 					{sectionIndex === sectionsArray.length - 1 ? (
 						<PiCaretDoubleUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					) : (
 						<PiCaretDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					)}
-				</button>
+				</motion.button>
 			</nav>
 
-			<nav className="fixed z-40 top-1 right-1">
-				<button onClick={prevSection}>
+			<nav className="fixed z-40 top-2 right-2">
+				<motion.button
+					whileHover={{ scale: 1.1, y: -10 }}
+					onClick={prevSection}
+				>
 					{sectionIndex === 0 ? (
 						<PiCaretDoubleDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					) : (
 						<PiCaretUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
 					)}
-				</button>
+				</motion.button>
 			</nav>
 
-			<nav className="fixed z-40 bottom-1 left-1">
+			<nav className="fixed z-40 bottom-2 left-2">
 				<ul className="flex flex-col-reverse gap-2">
-					<li
+					<motion.li
+						whileHover={{ scale: 1.1 }}
 						onClick={() => setToggleNavbar((prev) => !prev)}
 						className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-white border shadow-md sm:h-20 sm:w-20 sm:text-4xl rounded-xl"
 					>
 						<PiSquaresFourFill />
-					</li>
-					{toggleNavbar && (
-						<>
-							<li
-								onClick={() => setToggleInfoModal(true)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-white bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-							>
-								<PiInfoLight />
-							</li>
+					</motion.li>
 
-							<li
-								onClick={() => setSectionIndex(2)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
+					<AnimatePresence>
+						{toggleNavbar && (
+							<motion.div
+								initial={{ opacity: 0, x: -100 }}
+								animate={{ opacity: 1, x: 0 }}
+								exit={{ opacity: 0, x: -100 }}
+								className="flex flex-col-reverse gap-2"
 							>
-								<PiEnvelopeLight />
-							</li>
+								<motion.li
+									whileHover={{ scale: 1.1, y: -10 }}
+									onClick={() => setToggleInfoModal(true)}
+									className="flex items-center justify-center w-10 h-10 text-2xl text-white bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
+								>
+									<PiInfoLight />
+								</motion.li>
 
-							<li
-								onClick={() => setSectionIndex(1)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-							>
-								<PiUserLight />
-							</li>
+								<motion.li
+									whileHover={{ scale: 1.1, y: -10 }}
+									onClick={() => setSectionIndex(2)}
+									className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
+								>
+									<PiEnvelopeLight />
+								</motion.li>
 
-							<li
-								onClick={() => setSectionIndex(0)}
-								className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-							>
-								<PiHouseLight />
-							</li>
-						</>
-					)}
+								<motion.li
+									whileHover={{ scale: 1.1, y: -10 }}
+									onClick={() => setSectionIndex(1)}
+									className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
+								>
+									<PiUserLight />
+								</motion.li>
+
+								<motion.li
+									whileHover={{ scale: 1.1, y: -10 }}
+									onClick={() => setSectionIndex(0)}
+									className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
+								>
+									<PiHouseLight />
+								</motion.li>
+							</motion.div>
+						)}
+					</AnimatePresence>
 				</ul>
 			</nav>
-			{toggleInfoModal && <InfoModal setToggleInfoModal={setToggleInfoModal} />}
+
+			<AnimatePresence>
+				{toggleInfoModal && (
+					<InfoModal setToggleInfoModal={setToggleInfoModal} />
+				)}
+			</AnimatePresence>
 		</>
 	);
 };

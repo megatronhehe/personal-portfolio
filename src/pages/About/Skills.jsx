@@ -1,5 +1,7 @@
 import React from "react";
 
+import { motion } from "framer-motion";
+
 import { TechStackButton } from "./TechStackButton";
 
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from "react-icons/fa";
