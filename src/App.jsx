@@ -1,32 +1,22 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
-import Header from "./components/Header";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
-import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About/About";
+// import Projects from "./pages/Projects";
+// import Contact from "./pages/Contact";
+// import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<>
-			<Header />
-			<div className="my-24">
-				<Home />
-			</div>
-			<div className="my-24">
-				<About />
-			</div>
-			<div className="my-24">
-				<Projects />
-			</div>
-			<div className="mt-24">
-				<Contact />
-			</div>
-			<Footer />
-		</>
+		<main className="text-gray-600 font-extralight">
+			<Navbar />
+			<Home />
+			<About />
+			{/* <Projects />
+			<Contact />
+			<Footer /> */}
+		</main>
 	);
 }
 
