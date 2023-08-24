@@ -24,6 +24,7 @@ const Skills = () => {
 	return (
 		<>
 			<section className="flex flex-col py-4 border-b sm:py-6">
+				{/* <div className="bg-red-400 bg-orange-400 bg-yellow-400 bg-blue-300 bg-blue-400 bg-purple-400"></div> */}
 				<div>
 					<h2 className="flex flex-col items-center justify-center gap-2 pb-4 text-lg text-center sm:text-2xl sm:mb-6">
 						<PiCubeLight className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />

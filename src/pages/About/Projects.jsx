@@ -5,8 +5,7 @@ import { projectData } from "../../data/projectsData";
 import ProjectCard from "./ProjectCard";
 
 import { PiStackLight } from "react-icons/pi";
-
-console.log(projectData);
+import { BsGithub } from "react-icons/bs";
 
 const Projects = () => {
 	const projectsElement = projectData.map((project) => (
@@ -25,12 +24,15 @@ const Projects = () => {
 						The projects are purely made by me, my own design, my own code, my
 						own everything. Here are a few of my featured projects:
 					</p>
-					<button className="w-full text-sm text-end">github</button>
+					<button className="flex items-center justify-end w-full gap-2">
+						<p className="text-sm">check my repo!</p>
+						<BsGithub className="text-2xl" />
+					</button>
 				</div>
 			</div>
 
 			<div className="">
-				<ul className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2">
+				<ul className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 ">
 					{projectsElement}
 				</ul>
 			</div>

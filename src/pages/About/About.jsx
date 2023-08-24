@@ -9,7 +9,7 @@ const About = () => {
 	const [selected, setSelected] = useState("skills");
 
 	return (
-		<section id="about" className="flex flex-col items-center h-screen pt-6">
+		<section id="about" className="flex flex-col items-center pt-6 mb-40">
 			<div className="w-full max-w-3xl">
 				<nav className="relative flex justify-center w-full">
 					<PiDiamondsFourFill className="absolute -top-3.5 p-1 bg-white border rounded-full w-7 h-7" />

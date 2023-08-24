@@ -8,7 +8,7 @@ const Home = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex flex-col items-center justify-center h-screen mb-20 realtive"
+			className="relative flex flex-col items-center justify-center h-screen mb-40 realtive"
 		>
 			<PiDiamondsFourFill className="mb-4 sm:text-xl" />
 			<span className="sm:text-xl">Hi, I'm..</span>

@@ -3,8 +3,15 @@ import React, { useState } from "react";
 import { PiCaretDownLight, PiCaretUpLight } from "react-icons/pi";
 
 const Navbar = () => {
+	const sectionsArray = ["home", "about", "contact"];
+
+	const [sectionIndex, setSectionIndex] = useState(0);
+
 	const nextSection = () => {
-		const element = document.getElementById("about");
+		setSectionIndex((prev) =>
+			prev === sectionsArray.length - 1 ? 0 : prev + 1
+		);
+		const element = document.getElementById(sectionsArray[sectionIndex]);
 		element.scrollIntoView({ behavior: "smooth" });
 	};
 
