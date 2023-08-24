@@ -14,7 +14,9 @@ import {
 	PiUserLight,
 	PiEnvelopeLight,
 	PiInfoLight,
+	PiDiamondsFourFill,
 } from "react-icons/pi";
+import {} from "react-icons/pi";
 
 const Navbar = ({ sectionIndex, setSectionIndex }) => {
 	const sectionsArray = ["home", "about", "contact"];
@@ -75,7 +77,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			</nav>
 
 			<nav className="fixed z-40 bottom-2 left-2">
-				<ul className="flex flex-col-reverse gap-2">
+				<ul className="flex flex-col-reverse justify-center gap-2">
 					<motion.li
 						whileHover={{ scale: 1.1 }}
 						onClick={() => setToggleNavbar((prev) => !prev)}

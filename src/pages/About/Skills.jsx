@@ -32,7 +32,7 @@ const Skills = () => {
 						<PiCubeLight className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />
 						Tech stack
 					</h2>
-					<ul className="flex justify-around text-3xl text-white">
+					<ul className="flex justify-around px-6 text-3xl text-white sm:px-0">
 						<TechStackButton
 							title="HTML"
 							icon={<FaHtml5 />}

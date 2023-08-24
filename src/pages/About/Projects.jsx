@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { projectData } from "../../data/projectsData";
 
 import ProjectCard from "./ProjectCard";
-
-import { motion } from "framer-motion";
 
 import { PiStackLight } from "react-icons/pi";
 import { BsGithub } from "react-icons/bs";

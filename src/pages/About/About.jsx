@@ -18,7 +18,7 @@ const About = ({ setSectionIndex }) => {
 	return (
 		<section
 			id="about"
-			className="flex flex-col items-center pt-6 mb-40 sm:pt-16"
+			className="flex flex-col items-center pt-6 mb-72 sm:pt-16"
 		>
 			<div className="w-full max-w-3xl">
 				<nav className="relative flex justify-center w-full">
@@ -49,7 +49,7 @@ const About = ({ setSectionIndex }) => {
 						key={selected}
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -20 }}
+						exit={{ opacity: 0, y: 20 }}
 					>
 						{selected === "skills" ? <Skills /> : <Projects />}
 					</motion.div>

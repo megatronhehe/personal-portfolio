@@ -19,7 +19,7 @@ export const TechStackButton = ({ title, icon, color }) => {
 						initial={{ opacity: 0, y: -10 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -10 }}
-						className={`font-semibold absolute flex items-center text-center justify-center flex-col rounded-lg text-sm -bottom-8  px-3 py-1 bg-${color}`}
+						className={`font-semibold absolute flex items-center text-center justify-center flex-col rounded-lg text-sm -bottom-8  px-2 py-1 bg-${color}`}
 					>
 						{title}
 					</motion.h3>
