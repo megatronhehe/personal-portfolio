@@ -2,7 +2,7 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-import { PiInfo, PiArrowLeft } from "react-icons/pi";
+import { PiInfo, PiArrowLeft, PiGiftLight } from "react-icons/pi";
 import { SiReact, SiTailwindcss, SiNetlify } from "react-icons/si";
 
 const InfoModal = ({ setToggleInfoModal }) => {
@@ -14,11 +14,22 @@ const InfoModal = ({ setToggleInfoModal }) => {
 			onClick={() => {
 				setToggleInfoModal(false);
 			}}
-			className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-full gap-8 p-4 text-xl text-white bg-gray-800 bg-opacity-90 backdrop-filter backdrop-blur-lg"
+			className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-full gap-8 p-4 text-sm text-white bg-gray-800 sm:text-xl bg-opacity-90 backdrop-filter backdrop-blur-lg "
 		>
 			<PiInfo className="text-4xl" />
+
+			<div className="flex flex-col items-center gap-4 ">
+				<h2>This portfolio powered by:</h2>
+				<ul className="flex gap-8">
+					<li className="flex flex-col items-center text-cyan-300">
+						<SiNetlify className="text-4xl" />
+						Netlify
+					</li>
+				</ul>
+			</div>
+
 			<div className="flex flex-col items-center gap-4">
-				<h2>This portfolio is made using:</h2>
+				<h2>Technologies used to build my personal portfolio:</h2>
 				<ul className="flex gap-8">
 					<li className="flex flex-col items-center text-blue-300 text-purpe">
 						<SiReact className="text-4xl" />
@@ -32,13 +43,44 @@ const InfoModal = ({ setToggleInfoModal }) => {
 			</div>
 
 			<div className="flex flex-col items-center gap-4">
-				<h2>This portfolio powered by:</h2>
-				<ul className="flex gap-8">
-					<li className="flex flex-col items-center text-cyan-300">
-						<SiNetlify className="text-4xl" />
-						Netlify
+				<h2 className="text-center">
+					Other technologies used to support my personal portfolio:
+				</h2>
+				<ul className="flex items-center gap-4">
+					<li className="flex flex-col items-center text-center text-white">
+						Framer Motion
+					</li>
+
+					<li className="w-1 h-1 bg-white rounded-full"></li>
+
+					<li className="flex flex-col items-center text-center text-white">
+						React Icons
+					</li>
+
+					<li className="w-1 h-1 bg-white rounded-full"></li>
+
+					<li className="flex flex-col items-center text-center text-white">
+						Vite
+					</li>
+
+					<li className="w-1 h-1 bg-white rounded-full"></li>
+
+					<li className="flex flex-col items-center text-center text-white">
+						my rusty brain
 					</li>
 				</ul>
+			</div>
+
+			<div className="flex flex-col items-center justify-center">
+				<h3>Thankyou for visiting {":)"}</h3>
+				<span>here's a present for you!</span>
+				<motion.a
+					whileHover={{ scale: 1.2 }}
+					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+					target="_blank"
+				>
+					<PiGiftLight className="w-16 h-16 p-2 mt-4 text-4xl bg-gray-800 rounded-full hover:bg-blue-300" />
+				</motion.a>
 			</div>
 
 			<h1 className="text-center text-gray-400">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import satya from "../../assets/satyajpg2.jpg";
+import satya3 from "../../assets/satyajpg3.jpg";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -23,10 +23,10 @@ const Home = ({ setSectionIndex }) => {
 			<span className="sm:text-xl">Hi, I'm..</span>
 			<h2 className="mb-4 text-2xl sm:text-4xl">Satya Mahendra</h2>
 
-			<div className="flex flex-col items-center justify-center">
+			<div className="flex flex-col items-center justify-center ">
 				<img
-					src={satya}
-					className="w-2/3 -mb-0.5 border-8 border-blue-400 rounded-full sm:w-1/2"
+					src={satya3}
+					className="w-72 h-72  -mb-0.5 border-8 border-blue-400 rounded-full  object-cover"
 				/>
 
 				<div className="flex items-center justify-between w-24 h-4 text-white bg-blue-400 ">
@@ -67,6 +67,7 @@ const Home = ({ setSectionIndex }) => {
 						resume
 					</a>
 				</motion.li>
+
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<button
 						onClick={() => setShowBiodataModal(true)}
