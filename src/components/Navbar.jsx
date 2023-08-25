@@ -73,9 +73,9 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			<AnimatePresence>
 				{toggleNavbar && (
 					<motion.div
-						initial={{ opacity: 0, y: 10 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: 10 }}
+						initial={{ y: 40 }}
+						animate={{ y: 0 }}
+						exit={{ y: 40 }}
 						className="fixed bottom-0 left-0 z-30 flex items-center justify-center w-full "
 					>
 						<nav>
