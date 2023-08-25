@@ -10,10 +10,6 @@ import BiodataModal from "./BiodataModal";
 const Home = ({ setSectionIndex }) => {
 	const [showBiodataModal, setShowBiodataModal] = useState(false);
 
-	useEffect(() => {
-		setSectionIndex(0);
-	}, []);
-
 	return (
 		<section
 			id="home"
@@ -42,7 +38,7 @@ const Home = ({ setSectionIndex }) => {
 				</div>
 			</div>
 
-			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 sm:w-1/3 sm:text-4xl">
+			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 sm:w-2/3 lg:w-1/3 sm:text-4xl">
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<a
 						href="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"

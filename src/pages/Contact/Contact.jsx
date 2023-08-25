@@ -22,10 +22,6 @@ import {
 const Contact = ({ setSectionIndex }) => {
 	const [quotesIndex, setQuotesIndex] = useState(0);
 
-	useEffect(() => {
-		setSectionIndex(2);
-	}, []);
-
 	const randomizeQuotesIndex = () => {
 		const randomNumber = Math.floor(Math.random() * quotesData.length);
 		setQuotesIndex((prev) => (prev === randomNumber ? 0 : randomNumber));
@@ -40,7 +36,7 @@ const Contact = ({ setSectionIndex }) => {
 		>
 			<div className="flex flex-col items-center justify-center gap-16">
 				<PiDiamondsFourFill />
-				<h1 className="text-3xl sm:text-5xl">Get in touch with me!</h1>
+				<h1 className="text-3xl sm:text-5xl">Let's get in touch!</h1>
 
 				<div className="flex flex-col items-center justify-center gap-2">
 					<h2 className="sm:text-2xl">Social media</h2>

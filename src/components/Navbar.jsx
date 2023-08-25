@@ -4,9 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import InfoModal from "./InfoModal";
 
+import NavbarButton from "./NavbarButton";
+
 import {
-	PiCaretDownLight,
-	PiCaretUpLight,
 	PiCaretDoubleUpLight,
 	PiCaretDoubleDownLight,
 	PiSquaresFourFill,
@@ -23,29 +23,6 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 	const [toggleNavbar, setToggleNavbar] = useState(false);
 	const [toggleInfoModal, setToggleInfoModal] = useState(false);
 
-	const nextSection = () => {
-		// const newIndex = (sectionIndex + 1) % sectionsArray.length;
-		setSectionIndex((prev) => prev + 1);
-		// setSectionIndex(newIndex);
-		// scrollToSection(sectionsArray[newIndex]);
-	};
-
-	const prevSection = () => {
-		// const newIndex =
-		// 	sectionIndex === 0 ? sectionsArray.length - 1 : sectionIndex - 1;
-		setSectionIndex((prev) => prev - 1);
-		// setSectionIndex(newIndex);
-		// scrollToSection(sectionsArray[newIndex]);
-	};
-
-	const jumpToTop = () => {
-		setSectionIndex(0);
-	};
-
-	const jumpToBottom = () => {
-		setSectionIndex(sectionsArray.length - 1);
-	};
-
 	const scrollToSection = (sectionId) => {
 		const element = document.getElementById(sectionId);
 		if (element) {
@@ -53,52 +30,104 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 		}
 	};
 
+	const scrollToTop = () => {
+		setSectionIndex(0);
+	};
+
+	const scrollToBottom = () => {
+		setSectionIndex(sectionsArray.length - 1);
+	};
+
 	useEffect(() => {
 		scrollToSection(sectionsArray[sectionIndex]);
 	}, [sectionIndex]);
 
-	const isCurrentIndexLast = sectionIndex === sectionsArray.length - 1;
-
-	const isCurrentIndexFirst = sectionIndex === 0;
-
 	return (
 		<>
-			<nav className="fixed z-40 flex gap-2 top-1 right-1">
-				<motion.button
-					whileHover={{ scale: 1.1, y: -10 }}
-					onClick={jumpToTop}
-					disabled={isCurrentIndexFirst}
-				>
-					<PiCaretDoubleUpLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
-				</motion.button>
-				<motion.button
-					whileHover={{ scale: 1.1, y: -10 }}
-					onClick={prevSection}
-					disabled={isCurrentIndexFirst}
-				>
-					<PiCaretUpLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
-				</motion.button>
+			<motion.button
+				key={toggleNavbar}
+				animate={{ rotate: 180 }}
+				onClick={() => setToggleNavbar((prev) => !prev)}
+				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 bottom-1 right-1"
+			>
+				<PiSquaresFourFill />
+			</motion.button>
+
+			<nav className="fixed z-20 flex items-center justify-center top-1 right-1">
+				<ul className="flex flex-col">
+					<motion.li
+						onClick={scrollToTop}
+						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-t-xl hover:bg-blue-300 hover:border-white hover:text-white"
+					>
+						<PiCaretDoubleUpLight />
+					</motion.li>
+					<motion.li
+						onClick={scrollToBottom}
+						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-b-xl hover:bg-blue-300 hover:border-white hover:text-white"
+					>
+						<PiCaretDoubleDownLight />
+					</motion.li>
+				</ul>
 			</nav>
 
-			<nav className="fixed z-40 flex gap-2 bottom-1 right-1">
-				<motion.button
-					whileHover={{ scale: 1.1, y: -10 }}
-					onClick={jumpToBottom}
-					disabled={isCurrentIndexLast}
-				>
-					<PiCaretDoubleDownLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
-				</motion.button>
+			<AnimatePresence>
+				{toggleNavbar && (
+					<motion.div
+						initial={{ opacity: 0, y: 10 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 10 }}
+						className="fixed bottom-0 left-0 z-30 flex items-center justify-center w-full "
+					>
+						<nav>
+							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 bg-white border sm:w-96 sm:h-12 rounded-t-xl backdrop-filter bg-opacity-60 backdrop-blur-md">
+								<NavbarButton
+									sectionName="Home"
+									icon={<PiHouseLight />}
+									index={0}
+									sectionIndex={sectionIndex}
+									setSectionIndex={setSectionIndex}
+								/>
 
-				<motion.button
-					whileHover={{ scale: 1.1, y: -10 }}
-					onClick={nextSection}
-					disabled={isCurrentIndexLast}
-				>
-					<PiCaretDownLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
-				</motion.button>
-			</nav>
+								<NavbarButton
+									sectionName="About"
+									icon={<PiUserLight />}
+									index={1}
+									sectionIndex={sectionIndex}
+									setSectionIndex={setSectionIndex}
+								/>
 
-			<nav className="fixed z-40 bottom-2 left-2">
+								<NavbarButton
+									sectionName="Contact"
+									icon={<PiEnvelopeLight />}
+									index={2}
+									sectionIndex={sectionIndex}
+									setSectionIndex={setSectionIndex}
+								/>
+
+								<NavbarButton
+									sectionName="Info"
+									icon={<PiInfoLight />}
+									sectionIndex={sectionIndex}
+									setSectionIndex={setSectionIndex}
+									setToggleInfoModal={setToggleInfoModal}
+								/>
+							</ul>
+						</nav>
+					</motion.div>
+				)}
+			</AnimatePresence>
+
+			<AnimatePresence>
+				{toggleInfoModal && (
+					<InfoModal setToggleInfoModal={setToggleInfoModal} />
+				)}
+			</AnimatePresence>
+		</>
+	);
+};
+
+{
+	/* <nav className="fixed z-40 bottom-2 left-2">
 				<ul className="flex flex-col-reverse justify-center gap-2">
 					<motion.li
 						whileHover={{ scale: 1.1 }}
@@ -157,15 +186,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 						)}
 					</AnimatePresence>
 				</ul>
-			</nav>
-
-			<AnimatePresence>
-				{toggleInfoModal && (
-					<InfoModal setToggleInfoModal={setToggleInfoModal} />
-				)}
-			</AnimatePresence>
-		</>
-	);
-};
+			</nav> */
+}
 
 export default Navbar;
