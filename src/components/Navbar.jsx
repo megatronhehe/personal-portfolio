@@ -31,10 +31,12 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 	};
 
 	const scrollToTop = () => {
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 		setSectionIndex(0);
 	};
 
 	const scrollToBottom = () => {
+		window.scrollTo({ bottom: 0, left: 0, behavior: "smooth" });
 		setSectionIndex(sectionsArray.length - 1);
 	};
 
