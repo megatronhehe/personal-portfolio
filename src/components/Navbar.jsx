@@ -24,16 +24,26 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 	const [toggleInfoModal, setToggleInfoModal] = useState(false);
 
 	const nextSection = () => {
-		const newIndex = (sectionIndex + 1) % sectionsArray.length;
-		setSectionIndex(newIndex);
-		scrollToSection(sectionsArray[newIndex]);
+		// const newIndex = (sectionIndex + 1) % sectionsArray.length;
+		setSectionIndex((prev) => prev + 1);
+		// setSectionIndex(newIndex);
+		// scrollToSection(sectionsArray[newIndex]);
 	};
 
 	const prevSection = () => {
-		const newIndex =
-			sectionIndex === 0 ? sectionsArray.length - 1 : sectionIndex - 1;
-		setSectionIndex(newIndex);
-		scrollToSection(sectionsArray[newIndex]);
+		// const newIndex =
+		// 	sectionIndex === 0 ? sectionsArray.length - 1 : sectionIndex - 1;
+		setSectionIndex((prev) => prev - 1);
+		// setSectionIndex(newIndex);
+		// scrollToSection(sectionsArray[newIndex]);
+	};
+
+	const jumpToTop = () => {
+		setSectionIndex(0);
+	};
+
+	const jumpToBottom = () => {
+		setSectionIndex(sectionsArray.length - 1);
 	};
 
 	const scrollToSection = (sectionId) => {
@@ -47,31 +57,44 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 		scrollToSection(sectionsArray[sectionIndex]);
 	}, [sectionIndex]);
 
+	const isCurrentIndexLast = sectionIndex === sectionsArray.length - 1;
+
+	const isCurrentIndexFirst = sectionIndex === 0;
+
 	return (
 		<>
-			<nav className="fixed z-40 bottom-2 right-2">
+			<nav className="fixed z-40 flex gap-2 top-1 right-1">
 				<motion.button
 					whileHover={{ scale: 1.1, y: -10 }}
-					onClick={nextSection}
+					onClick={jumpToTop}
+					disabled={isCurrentIndexFirst}
 				>
-					{sectionIndex === sectionsArray.length - 1 ? (
-						<PiCaretDoubleUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
-					) : (
-						<PiCaretDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
-					)}
+					<PiCaretDoubleUpLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
 				</motion.button>
-			</nav>
-
-			<nav className="fixed z-40 top-2 right-2">
 				<motion.button
 					whileHover={{ scale: 1.1, y: -10 }}
 					onClick={prevSection}
+					disabled={isCurrentIndexFirst}
 				>
-					{sectionIndex === 0 ? (
-						<PiCaretDoubleDownLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
-					) : (
-						<PiCaretUpLight className="w-10 h-10 p-2 bg-white border rounded-full shadow-md sm:h-20 sm:w-20 sm:p-6" />
-					)}
+					<PiCaretUpLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
+				</motion.button>
+			</nav>
+
+			<nav className="fixed z-40 flex gap-2 bottom-1 right-1">
+				<motion.button
+					whileHover={{ scale: 1.1, y: -10 }}
+					onClick={jumpToBottom}
+					disabled={isCurrentIndexLast}
+				>
+					<PiCaretDoubleDownLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
+				</motion.button>
+
+				<motion.button
+					whileHover={{ scale: 1.1, y: -10 }}
+					onClick={nextSection}
+					disabled={isCurrentIndexLast}
+				>
+					<PiCaretDownLight className="w-8 h-8 p-2 bg-white border shadow-md rounded-xl sm:h-14 sm:w-14 sm:p-4" />
 				</motion.button>
 			</nav>
 
