@@ -24,10 +24,14 @@ const Projects = () => {
 					everything. Here are a few of my featured projects:
 				</p>
 				<div className="flex justify-center w-full mt-4 ">
-					<button className="flex items-center gap-2 p-2 border rounded-full hover:bg-gray-700 hover:text-white hover:border-white">
+					<a
+						href="https://github.com/megatronhehe"
+						target="_blank"
+						className="flex items-center gap-2 p-2 border rounded-full hover:bg-gray-700 hover:text-white hover:border-white"
+					>
 						<p className="text-sm">check my repo!</p>
 						<BsGithub className="text-2xl" />
-					</button>
+					</a>
 				</div>
 			</div>
 

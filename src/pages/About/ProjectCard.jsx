@@ -37,6 +37,7 @@ const ProjectCard = ({ project }) => {
 								<PiPlayFill className="w-10 h-10 p-2 text-white bg-red-300 rounded-full" />
 								Live Demo
 							</motion.li>
+
 							<motion.li
 								whileHover={{ scale: 1.1 }}
 								onClick={() => setToggleModal(true)}
@@ -45,12 +46,16 @@ const ProjectCard = ({ project }) => {
 								<PiImageLight className="w-10 h-10 p-2 text-gray-400 bg-white rounded-full" />
 								Image Preview
 							</motion.li>
-							<motion.li
-								whileHover={{ scale: 1.1 }}
-								className="flex flex-col items-center justify-center gap-2 px-3 py-1 text-center cursor-pointer "
-							>
-								<PiCodeBlockLight className="w-10 h-10 p-2 text-white bg-blue-300 rounded-full" />
-								Image Preview
+
+							<motion.li whileHover={{ scale: 1.1 }}>
+								<a
+									href={sc}
+									target="_blank"
+									className="flex flex-col items-center justify-center gap-2 px-3 py-1 text-center cursor-pointer "
+								>
+									<PiCodeBlockLight className="w-10 h-10 p-2 text-white bg-blue-300 rounded-full" />
+									Source Code
+								</a>
 							</motion.li>
 						</ul>
 					</motion.div>

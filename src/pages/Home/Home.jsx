@@ -44,15 +44,25 @@ const Home = ({ setSectionIndex }) => {
 
 			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 sm:w-1/3 sm:text-4xl">
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
-					<BsLinkedin />
+					<a
+						href="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"
+						target="_blank"
+					>
+						<BsLinkedin />
+					</a>
 				</motion.li>
+
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
-					<BsGithub />
+					<a href="https://github.com/megatronhehe" target="_blank">
+						<BsGithub />
+					</a>
 				</motion.li>
+
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<a
-						href=""
-						className="flex items-center gap-2 px-3 py-2 text-sm text-white bg-blue-400 rounded-md sm:text-xl"
+						href="https://drive.google.com/file/d/10kAqVNN3iCBp5d3vv5XApX6Ow5NGU-Ap/view"
+						target="_blank"
+						className="flex items-center gap-2 px-3 py-1 text-sm text-white bg-blue-400 rounded-md sm:text-xl"
 					>
 						resume
 					</a>
@@ -60,7 +70,7 @@ const Home = ({ setSectionIndex }) => {
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<button
 						onClick={() => setShowBiodataModal(true)}
-						className="flex items-center gap-2 px-3 py-2 text-sm text-white bg-gray-600 rounded-full sm:text-xl"
+						className="flex items-center gap-2 px-3 py-1 text-sm text-white bg-gray-600 rounded-full sm:text-xl"
 					>
 						biodata
 					</button>

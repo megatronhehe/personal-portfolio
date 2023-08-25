@@ -48,15 +48,32 @@ const Contact = ({ setSectionIndex }) => {
 						<ContactButton
 							name="Ida Bagus Satya Mahendra"
 							icon={<BsLinkedin />}
+							link="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"
 						/>
 
-						<ContactButton name="007satya_" icon={<BsInstagram />} />
+						<ContactButton
+							name="007satya_"
+							icon={<BsInstagram />}
+							link="https://www.instagram.com/007satya_/"
+						/>
 
-						<ContactButton name="007satya_" icon={<BsDiscord />} />
+						<ContactButton
+							name="007satya_"
+							icon={<BsDiscord />}
+							link="https://discordapp.com/users/225262332157100034"
+						/>
 
-						<ContactButton name="megatronhehe" icon={<BsGithub />} />
+						<ContactButton
+							name="megatronhehe"
+							icon={<BsGithub />}
+							link="https://github.com/megatronhehe"
+						/>
 
-						<ContactButton name="0822'5410'3639" icon={<BsWhatsapp />} />
+						<ContactButton
+							name="0822'5410'3639"
+							icon={<BsWhatsapp />}
+							link="https://wa.me/6282254103639"
+						/>
 					</ul>
 				</div>
 
@@ -66,10 +83,12 @@ const Contact = ({ setSectionIndex }) => {
 						<ContactButton
 							name="satyamahendra09@gmail.com"
 							icon={<BsFillEnvelopeAtFill />}
+							link="mailto:satyamahendra09@gmail.com"
 						/>
 						<ContactButton
 							name="0822'5410'3639"
 							icon={<BsFillTelephoneFill />}
+							link="https://wa.me/6282254103639"
 						/>
 					</ul>
 				</div>
