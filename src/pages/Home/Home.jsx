@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
-import satya from "../assets/satyajpg2.jpg";
+import React, { useEffect, useState } from "react";
+import satya from "../../assets/satyajpg2.jpg";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { BsLinkedin, BsGithub, BsDownload } from "react-icons/bs";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { PiDiamondsFourFill } from "react-icons/pi";
+import BiodataModal from "./BiodataModal";
 
 const Home = ({ setSectionIndex }) => {
+	const [showBiodataModal, setShowBiodataModal] = useState(false);
+
 	useEffect(() => {
 		setSectionIndex(0);
 	}, []);
@@ -52,10 +55,23 @@ const Home = ({ setSectionIndex }) => {
 						className="flex items-center gap-2 px-3 py-2 text-sm text-white bg-blue-400 rounded-md sm:text-xl"
 					>
 						resume
-						<BsDownload />
 					</a>
 				</motion.li>
+				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
+					<button
+						onClick={() => setShowBiodataModal(true)}
+						className="flex items-center gap-2 px-3 py-2 text-sm text-white bg-gray-600 rounded-full sm:text-xl"
+					>
+						biodata
+					</button>
+				</motion.li>
 			</ul>
+
+			<AnimatePresence>
+				{showBiodataModal && (
+					<BiodataModal setShowBiodataModal={setShowBiodataModal} />
+				)}
+			</AnimatePresence>
 		</section>
 	);
 };

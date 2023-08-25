@@ -14,7 +14,6 @@ import {
 	PiUserLight,
 	PiEnvelopeLight,
 	PiInfoLight,
-	PiDiamondsFourFill,
 } from "react-icons/pi";
 import {} from "react-icons/pi";
 
@@ -83,7 +82,13 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 						onClick={() => setToggleNavbar((prev) => !prev)}
 						className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-white border shadow-md sm:h-20 sm:w-20 sm:text-4xl rounded-xl"
 					>
-						<PiSquaresFourFill />
+						<motion.div
+							whileHover={{ rotate: 180 }}
+							transition={{ duration: 0.5 }}
+							className="flex items-center justify-center w-full h-full"
+						>
+							<PiSquaresFourFill />
+						</motion.div>
 					</motion.li>
 
 					<AnimatePresence>

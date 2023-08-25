@@ -4,6 +4,8 @@ import ContactButton from "./ContactButton";
 
 import { quotesData } from "../../data/data";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import { PiDiamondsFourFill } from "react-icons/pi";
 
 import {
@@ -26,7 +28,7 @@ const Contact = ({ setSectionIndex }) => {
 
 	const randomizeQuotesIndex = () => {
 		const randomNumber = Math.floor(Math.random() * quotesData.length);
-		setQuotesIndex(randomNumber);
+		setQuotesIndex((prev) => (prev === randomNumber ? 0 : randomNumber));
 	};
 
 	const selectedQuote = quotesData[quotesIndex];
@@ -73,10 +75,29 @@ const Contact = ({ setSectionIndex }) => {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center justify-between text-xs text-gray-400 sm:text-sm h-28">
-				<BsDiamond onClick={randomizeQuotesIndex} />
-				<p className="p-4 text-center">{selectedQuote.quote}</p>
-				<p>{selectedQuote.by}</p>
+			<div className="flex flex-col items-center justify-between text-xs text-gray-400 sm:text-sm ">
+				<motion.button
+					key={quotesIndex}
+					animate={{ rotate: 360 }}
+					transition={{ duration: 1.5 }}
+				>
+					<BsDiamond onClick={randomizeQuotesIndex} />
+				</motion.button>
+
+				<div className="h-20 ">
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={quotesIndex}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							className="flex flex-col items-center justify-center"
+						>
+							<p className="p-4 text-center">"{selectedQuote.quote}"</p>
+							<p>- {selectedQuote.by}</p>
+						</motion.div>
+					</AnimatePresence>
+				</div>
 			</div>
 		</section>
 	);

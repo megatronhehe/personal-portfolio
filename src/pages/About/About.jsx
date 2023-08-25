@@ -22,7 +22,14 @@ const About = ({ setSectionIndex }) => {
 		>
 			<div className="w-full max-w-3xl">
 				<nav className="relative flex justify-center w-full">
-					<PiDiamondsFourFill className="absolute -top-3.5 p-1 bg-white border rounded-full w-7 h-7" />
+					<motion.div
+						key={selected}
+						animate={{ rotate: 360 }}
+						transition={{ duration: 1.5 }}
+						className="absolute flex items-center justify-center -top-3.5 p-1 bg-white border rounded-full w-7 h-7"
+					>
+						<PiDiamondsFourFill />
+					</motion.div>
 
 					<ul className="flex justify-around w-full px-2 text-gray-400 border-y sm:text-xl">
 						<li
@@ -49,7 +56,7 @@ const About = ({ setSectionIndex }) => {
 						key={selected}
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: 20 }}
+						exit={{ opacity: 0, y: -20 }}
 					>
 						{selected === "skills" ? <Skills /> : <Projects />}
 					</motion.div>
