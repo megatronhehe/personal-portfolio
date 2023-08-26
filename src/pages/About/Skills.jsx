@@ -100,7 +100,7 @@ const Skills = () => {
 				</div>
 			</section>
 
-			<section className="flex border-b ">
+			<section className="flex border-b dark:border-gray-600">
 				<div className="w-1/2 py-4 text-sm border-r sm:py-6 sm:text-xl dark:border-gray-600">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-center sm:text-2xl sm:mb-6">
 						<PiHeadsetLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
