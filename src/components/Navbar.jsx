@@ -100,7 +100,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 						className="fixed bottom-0 left-0 z-30 flex items-center justify-center w-full "
 					>
 						<nav>
-							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md">
+							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md dark:bg-opacity-60">
 								<NavbarButton
 									sectionName="Home"
 									icon={<PiHouseLight />}

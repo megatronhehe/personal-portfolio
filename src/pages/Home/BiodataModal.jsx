@@ -20,8 +20,8 @@ const BiodataModal = ({ setShowBiodataModal }) => {
 			onClick={() => setShowBiodataModal(false)}
 			className="fixed top-0 left-0 z-10 flex items-center justify-center w-full h-full text-black "
 		>
-			<div className="relative flex flex-col items-center justify-center w-full max-w-xs gap-4 p-4 bg-white border shadow-lg sm:max-w-lg rounded-xl max-h-2xl bg-opacity-90 backdrop-filter backdrop-blur-sm">
-				<h1 className="flex flex-col items-center w-full gap-2 pb-4 text-2xl text-center border-b">
+			<div className="relative flex flex-col items-center justify-center w-full max-w-xs gap-4 p-4 bg-white border shadow-lg sm:max-w-lg rounded-xl max-h-2xl bg-opacity-90 backdrop-filter backdrop-blur-sm dark:bg-gray-800 dark:border-gray-600 dark:bg-opacity-90 dark:text-gray-300">
+				<h1 className="flex flex-col items-center w-full gap-2 pb-4 text-2xl text-center border-b dark:border-gray-600">
 					<BsPersonCircle className="p-2 text-blue-300 bg-white rounded-full w-14 h-14" />
 					Biodata
 				</h1>
@@ -60,7 +60,7 @@ const BiodataModal = ({ setShowBiodataModal }) => {
 					</li>
 				</ul>
 
-				<button className="absolute flex items-center justify-center w-8 h-8 text-white bg-red-300 rounded-full top-2 right-2">
+				<button className="absolute flex items-center justify-center w-8 h-8 text-white bg-red-300 rounded-full top-2 right-2 hover:bg-red-400">
 					<PiXLight />
 				</button>
 			</div>
