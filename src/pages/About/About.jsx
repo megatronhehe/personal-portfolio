@@ -34,12 +34,13 @@ const About = ({ setSectionIndex }) => {
 					<ul className="flex justify-around w-full px-2 dark:border-gray-600 border-y sm:text-xl">
 						<li
 							onClick={() => setSelected("skills")}
-							className={`px-4 py-3 border-b-4 cursor-pointer text-gray-400 hover:text-black dark:hover:text-white
+							className={`px-4 py-3 border-b-4 cursor-pointer hover:text-black dark:hover:text-white
 							${
 								selected === "skills"
-									? "border-blue-300 text-black dark:text-white"
+									? "border-blue-300  dark:text-white"
 									: "border-white dark:border-gray-800"
 							}
+							${selected === "skills" ? "text-black" : "text-gray-400"}
 							`}
 						>
 							Skills
@@ -49,9 +50,10 @@ const About = ({ setSectionIndex }) => {
 							className={`px-4 py-3 border-b-4 cursor-pointer hover:text-black dark:hover:text-white
 							${
 								selected === "projects"
-									? "border-blue-300 text-black dark:text-white"
+									? "border-blue-300  dark:text-white"
 									: "border-white dark:border-gray-800"
 							}
+							${selected === "projects" ? "text-black" : "text-gray-400"}
 							`}
 						>
 							Projects
