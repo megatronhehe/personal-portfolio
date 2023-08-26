@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import satya3 from "../../assets/satyajpg3.jpg";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -26,8 +26,8 @@ const Home = ({ setSectionIndex }) => {
 				/>
 
 				<div className="flex items-center justify-between w-24 h-4 text-white bg-blue-400 ">
-					<div className="w-1/3 h-full bg-white rounded-r-xl"></div>
-					<div className="w-1/3 h-full bg-white rounded-l-xl"></div>
+					<div className="w-1/3 h-full bg-white dark:bg-gray-800 rounded-r-xl"></div>
+					<div className="w-1/3 h-full bg-white rounded-l-xl dark:bg-gray-800"></div>
 				</div>
 				<div className="relative flex flex-col items-center justify-center gap-2 p-4 font-semibold text-white bg-blue-400 rounded-xl">
 					<h1 className="sm:text-2xl">Front-end Web Developer</h1>
@@ -38,7 +38,7 @@ const Home = ({ setSectionIndex }) => {
 				</div>
 			</div>
 
-			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 sm:w-2/3 lg:w-1/3 sm:text-4xl">
+			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 dark:border-gray-600 sm:w-2/3 lg:w-1/3 sm:text-4xl">
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<a
 						href="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"

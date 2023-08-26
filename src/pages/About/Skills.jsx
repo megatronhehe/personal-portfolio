@@ -25,11 +25,11 @@ import {
 const Skills = () => {
 	return (
 		<>
-			<section className="flex flex-col py-4 border-b sm:py-6">
+			<section className="flex flex-col py-4 border-b dark:border-gray-600 sm:py-6">
 				{/* <div className="bg-red-400 bg-orange-400 bg-yellow-400 bg-blue-300 bg-blue-400 bg-purple-400"></div> */}
 				<div>
 					<h2 className="flex flex-col items-center justify-center gap-2 pb-4 text-lg text-center sm:text-2xl sm:mb-6">
-						<PiCubeLight className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />
+						<PiCubeLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 						Tech stack
 					</h2>
 					<ul className="flex justify-around px-6 text-3xl text-white sm:px-0">
@@ -72,13 +72,13 @@ const Skills = () => {
 				</div>
 			</section>
 
-			<section className="flex flex-col py-4 border-b sm:py-6">
+			<section className="flex flex-col py-4 border-b dark:border-gray-600 sm:py-6">
 				<div className="text-sm sm:text-xl ">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-base text-center sm:text-2xl sm:mb-6">
-						<PiCodeLight className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />
+						<PiCodeLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 						Code
 					</h2>
-					<ul className="flex flex-col gap-1 text-black">
+					<ul className="flex flex-col gap-1 ">
 						<li className="flex items-center justify-center gap-2 rounded-full">
 							<PiCodeLight className="w-6 h-6 p-1 border rounded-full" />
 							create clean code
@@ -101,12 +101,12 @@ const Skills = () => {
 			</section>
 
 			<section className="flex border-b ">
-				<div className="w-1/2 py-4 text-sm border-r sm:py-6 sm:text-xl">
+				<div className="w-1/2 py-4 text-sm border-r sm:py-6 sm:text-xl dark:border-gray-600">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-center sm:text-2xl sm:mb-6">
-						<PiHeadsetLight className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />
+						<PiHeadsetLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 						Communication
 					</h2>
-					<ul className="flex flex-col gap-2 text-black">
+					<ul className="flex flex-col gap-2 ">
 						<li className="flex items-center justify-center gap-2 rounded-full">
 							<PiHeartLight className="w-6 h-6 p-1 border rounded-full" />
 							polite & respectful
@@ -120,10 +120,10 @@ const Skills = () => {
 
 				<div className="w-1/2 py-4 text-sm sm:py-6 sm:text-xl">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-center sm:text-2xl sm:mb-6">
-						<PiHandshakeThin className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />
+						<PiHandshakeThin className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 						Environment
 					</h2>
-					<ul className="flex flex-col gap-2 text-black">
+					<ul className="flex flex-col gap-2 ">
 						<li className="flex items-center justify-center gap-2 rounded-full">
 							<PiUsersThreeLight className="w-6 h-6 p-1 border rounded-full" />
 							efficient team player

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import ThemeContext from "../context/ThemeContext";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,13 +16,17 @@ import {
 	PiUserLight,
 	PiEnvelopeLight,
 	PiInfoLight,
+	PiMoonFill,
+	PiSunFill,
 } from "react-icons/pi";
 import {} from "react-icons/pi";
 
 const Navbar = ({ sectionIndex, setSectionIndex }) => {
+	const { darkMode, setDarkMode } = useContext(ThemeContext);
+
 	const sectionsArray = ["home", "about", "contact"];
 
-	const [toggleNavbar, setToggleNavbar] = useState(false);
+	const [toggleNavbar, setToggleNavbar] = useState(true);
 	const [toggleInfoModal, setToggleInfoModal] = useState(false);
 
 	const scrollToSection = (sectionId) => {
@@ -47,10 +53,22 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 	return (
 		<>
 			<motion.button
-				key={toggleNavbar}
+				key={darkMode}
+				animate={{ rotate: 360 }}
+				onClick={() => setDarkMode((prev) => !prev)}
+				transition={{ duration: 1 }}
+				className={`fixed z-40 flex items-center justify-center text-2xl  bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 top-1 left-1 ${
+					darkMode ? "text-blue-200" : "text-yellow-300"
+				}`}
+			>
+				{darkMode ? <PiMoonFill /> : <PiSunFill />}
+			</motion.button>
+
+			<motion.button
+				key={toggleNavbar ? "on" : "off"}
 				animate={{ rotate: 180 }}
 				onClick={() => setToggleNavbar((prev) => !prev)}
-				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 bottom-1 right-1"
+				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 bottom-1 right-1"
 			>
 				<PiSquaresFourFill />
 			</motion.button>
@@ -59,13 +77,13 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 				<ul className="flex flex-col">
 					<motion.li
 						onClick={scrollToTop}
-						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-t-xl hover:bg-blue-300 hover:border-white hover:text-white"
+						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-t-xl hover:bg-blue-300 dark:border-gray-600 dark:bg-gray-800 hover:border-white hover:text-white"
 					>
 						<PiCaretDoubleUpLight />
 					</motion.li>
 					<motion.li
 						onClick={scrollToBottom}
-						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-b-xl hover:bg-blue-300 hover:border-white hover:text-white"
+						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-b-xl hover:bg-blue-300 hover:border-white hover:text-white dark:border-gray-600 dark:bg-gray-800"
 					>
 						<PiCaretDoubleDownLight />
 					</motion.li>
@@ -75,19 +93,21 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			<AnimatePresence>
 				{toggleNavbar && (
 					<motion.div
-						initial={{ y: 40 }}
+						initial={{ y: 80 }}
 						animate={{ y: 0 }}
-						exit={{ y: 40 }}
+						exit={{ y: 80 }}
+						transition={{ type: "tween" }}
 						className="fixed bottom-0 left-0 z-30 flex items-center justify-center w-full "
 					>
 						<nav>
-							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 bg-white border sm:w-96 sm:h-12 rounded-t-xl backdrop-filter bg-opacity-60 backdrop-blur-md">
+							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md">
 								<NavbarButton
 									sectionName="Home"
 									icon={<PiHouseLight />}
 									index={0}
 									sectionIndex={sectionIndex}
 									setSectionIndex={setSectionIndex}
+									darkMode={darkMode}
 								/>
 
 								<NavbarButton
@@ -96,6 +116,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 									index={1}
 									sectionIndex={sectionIndex}
 									setSectionIndex={setSectionIndex}
+									darkMode={darkMode}
 								/>
 
 								<NavbarButton
@@ -104,6 +125,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 									index={2}
 									sectionIndex={sectionIndex}
 									setSectionIndex={setSectionIndex}
+									darkMode={darkMode}
 								/>
 
 								<NavbarButton
@@ -112,6 +134,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 									sectionIndex={sectionIndex}
 									setSectionIndex={setSectionIndex}
 									setToggleInfoModal={setToggleInfoModal}
+									darkMode={darkMode}
 								/>
 							</ul>
 						</nav>

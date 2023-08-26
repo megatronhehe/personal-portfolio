@@ -26,24 +26,32 @@ const About = ({ setSectionIndex }) => {
 						key={selected}
 						animate={{ rotate: 360 }}
 						transition={{ duration: 1.5 }}
-						className="absolute flex items-center justify-center w-8 h-8 bg-white border rounded-full -top-4"
+						className="absolute flex items-center justify-center w-8 h-8 bg-white border rounded-full dark:bg-gray-800 dark:border-gray-600 -top-4"
 					>
 						<PiDiamondsFourFill />
 					</motion.div>
 
-					<ul className="flex justify-around w-full px-2 text-gray-400 border-y sm:text-xl">
+					<ul className="flex justify-around w-full px-2 dark:border-gray-600 border-y sm:text-xl">
 						<li
 							onClick={() => setSelected("skills")}
-							className={`px-4 py-3 border-b-4 cursor-pointer hover:text-black
-							${selected === "skills" ? "border-blue-300 text-black" : "border-white"}
+							className={`px-4 py-3 border-b-4 cursor-pointer text-gray-400 hover:text-black dark:hover:text-white
+							${
+								selected === "skills"
+									? "border-blue-300 text-black dark:text-white"
+									: "border-white dark:border-gray-800"
+							}
 							`}
 						>
 							Skills
 						</li>
 						<li
 							onClick={() => setSelected("projects")}
-							className={`px-4 py-3 border-b-4 cursor-pointer hover:text-black
-							${selected === "projects" ? "border-blue-300 text-black" : "border-white"}
+							className={`px-4 py-3 border-b-4 cursor-pointer hover:text-black dark:hover:text-white
+							${
+								selected === "projects"
+									? "border-blue-300 text-black dark:text-white"
+									: "border-white dark:border-gray-800"
+							}
 							`}
 						>
 							Projects

@@ -13,10 +13,10 @@ const Projects = () => {
 	));
 
 	return (
-		<section className="p-4">
+		<section className="p-4 sm:py-6">
 			<div className="flex flex-col items-center ">
 				<h2 className="flex flex-col items-center justify-center gap-2 pb-4 text-lg text-center sm:text-2xl">
-					<PiStackLight className="w-10 h-10 p-2 border rounded-full sm:w-14 sm:h-14" />
+					<PiStackLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 					Projects
 				</h2>
 				<p className="text-sm sm:text-base">
