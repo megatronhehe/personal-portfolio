@@ -55,8 +55,8 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			<motion.button
 				key={darkMode}
 				animate={{ rotate: 360 }}
+				whileHover={{ scale: 1.2 }}
 				onClick={() => setDarkMode((prev) => !prev)}
-				transition={{ duration: 1 }}
 				className={`fixed z-40 flex items-center justify-center text-2xl  bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 top-1 left-1 ${
 					darkMode ? "text-blue-200" : "text-yellow-300"
 				}`}
@@ -67,6 +67,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 			<motion.button
 				key={toggleNavbar ? "on" : "off"}
 				animate={{ rotate: 180 }}
+				whileHover={{ scale: 1.2 }}
 				onClick={() => setToggleNavbar((prev) => !prev)}
 				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 bottom-1 right-1"
 			>
@@ -77,13 +78,13 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 				<ul className="flex flex-col">
 					<motion.li
 						onClick={scrollToTop}
-						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-t-xl hover:bg-blue-300 dark:border-gray-600 dark:bg-gray-800 hover:border-white hover:text-white"
+						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-t-xl hover:bg-blue-300 dark:hover:bg-blue-300 dark:border-gray-600 dark:bg-gray-800 hover:border-white hover:text-white"
 					>
 						<PiCaretDoubleUpLight />
 					</motion.li>
 					<motion.li
 						onClick={scrollToBottom}
-						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-b-xl hover:bg-blue-300 hover:border-white hover:text-white dark:border-gray-600 dark:bg-gray-800"
+						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-b-xl hover:bg-blue-300 dark:hover:bg-blue-300 hover:border-white hover:text-white dark:border-gray-600 dark:bg-gray-800"
 					>
 						<PiCaretDoubleDownLight />
 					</motion.li>
@@ -100,7 +101,7 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 						className="fixed bottom-0 left-0 z-30 flex items-center justify-center w-full "
 					>
 						<nav>
-							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md dark:bg-opacity-60">
+							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 transition-colors duration-1000 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md dark:bg-opacity-60">
 								<NavbarButton
 									sectionName="Home"
 									icon={<PiHouseLight />}

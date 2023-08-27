@@ -14,7 +14,7 @@ const InfoModal = ({ setToggleInfoModal }) => {
 			onClick={() => {
 				setToggleInfoModal(false);
 			}}
-			className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-full gap-8 p-4 text-sm text-white bg-gray-800 sm:text-xl bg-opacity-90 backdrop-filter backdrop-blur-lg "
+			className="fixed top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-full gap-8 p-4 text-sm text-white bg-gray-900 sm:text-xl bg-opacity-90 backdrop-filter backdrop-blur-lg "
 		>
 			<PiInfo className="text-4xl" />
 
