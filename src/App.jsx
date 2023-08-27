@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<main className={darkMode ? "dark" : ""}>
-			<div className="text-gray-600 font-extralight dark:bg-gray-800 dark:text-gray-300">
+			<div className="text-gray-600 transition-colors duration-1000 font-extralight dark:bg-gray-800 dark:text-gray-300">
 				<Navbar sectionIndex={sectionIndex} setSectionIndex={setSectionIndex} />
 				<Home setSectionIndex={setSectionIndex} />
 				<About setSectionIndex={setSectionIndex} />

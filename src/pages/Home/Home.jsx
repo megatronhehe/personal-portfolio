@@ -26,8 +26,8 @@ const Home = ({ setSectionIndex }) => {
 				/>
 
 				<div className="flex items-center justify-between w-24 h-4 text-white bg-blue-400 ">
-					<div className="w-1/3 h-full bg-white dark:bg-gray-800 rounded-r-xl"></div>
-					<div className="w-1/3 h-full bg-white rounded-l-xl dark:bg-gray-800"></div>
+					<div className="w-1/3 h-full transition-colors duration-1000 bg-white dark:bg-gray-800 rounded-r-xl"></div>
+					<div className="w-1/3 h-full transition-colors duration-1000 bg-white rounded-l-xl dark:bg-gray-800"></div>
 				</div>
 				<div className="relative flex flex-col items-center justify-center gap-2 p-4 font-semibold text-white bg-blue-400 rounded-xl">
 					<h1 className="sm:text-2xl">Front-end Web Developer</h1>
