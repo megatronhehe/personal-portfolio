@@ -4,10 +4,10 @@ import satya3 from "../../assets/satyajpg3.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { PiDiamondsFourFill } from "react-icons/pi";
+import { PiDiamondsFourFill, PiArrowSquareOutLight } from "react-icons/pi";
 import BiodataModal from "./BiodataModal";
 
-const Home = ({ setSectionIndex }) => {
+const Home = () => {
 	const [showBiodataModal, setShowBiodataModal] = useState(false);
 
 	return (
@@ -56,11 +56,11 @@ const Home = ({ setSectionIndex }) => {
 
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<a
-						href="https://drive.google.com/file/d/10kAqVNN3iCBp5d3vv5XApX6Ow5NGU-Ap/view"
+						href="https://drive.google.com/file/d/1sqQI5g4iEuLcGofqSHlVMl3WaONryTb1/view?usp=drive_link"
 						target="_blank"
 						className="flex items-center gap-2 px-3 py-1 text-sm text-white bg-blue-400 rounded-md sm:text-xl"
 					>
-						resume
+						résumé <PiArrowSquareOutLight />
 					</a>
 				</motion.li>
 
