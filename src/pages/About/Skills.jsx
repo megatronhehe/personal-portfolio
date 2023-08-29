@@ -15,7 +15,7 @@ import {
 	PiBookOpenLight,
 	PiThumbsUpLight,
 	PiSelectionThin,
-	PiHeartLight,
+	PiHeartFill,
 	PiUserLight,
 	PiUsersThreeLight,
 	PiHeadsetLight,
@@ -73,27 +73,28 @@ const Skills = () => {
 			</section>
 
 			<section className="flex flex-col py-4 border-b dark:border-gray-600 sm:py-6">
-				<div className="text-sm sm:text-xl ">
+				<div className="text-sm sm:text-lg ">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-base text-center sm:text-2xl sm:mb-6">
-						<PiCodeLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
+						<PiCodeLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14 " />
 						Code
 					</h2>
 					<ul className="flex flex-col gap-1 ">
-						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiCodeLight className="w-6 h-6 p-1 border rounded-full" />
+						<li className="flex items-center justify-center gap-2 rounded-full ">
+							<PiCodeLight className="p-1 text-white bg-blue-600 rounded-full w-7 h-7" />
 							create clean code
 						</li>
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiBookOpenLight className="w-6 h-6 p-1 border rounded-full" />
+							<PiBookOpenLight className="p-1 text-white bg-green-600 rounded-full w-7 h-7" />
 							create easy to read code
 						</li>
 
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiThumbsUpLight className="w-6 h-6 p-1 border rounded-full" />
+							<PiThumbsUpLight className="p-1 text-white bg-red-600 rounded-full w-7 h-7" />
 							following coding best practices
 						</li>
+
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiSelectionThin className="w-6 h-6 p-1 border rounded-full" />
+							<PiSelectionThin className="p-1 text-white bg-purple-600 rounded-full w-7 h-7" />
 							create responsive design
 						</li>
 					</ul>
@@ -101,35 +102,35 @@ const Skills = () => {
 			</section>
 
 			<section className="flex border-b dark:border-gray-600">
-				<div className="w-1/2 py-4 text-sm border-r sm:py-6 sm:text-xl dark:border-gray-600">
+				<div className="w-1/2 py-4 text-sm border-r sm:py-6 sm:text-lg dark:border-gray-600">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-center sm:text-2xl sm:mb-6">
 						<PiHeadsetLight className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 						Communication
 					</h2>
 					<ul className="flex flex-col gap-2 ">
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiHeartLight className="w-6 h-6 p-1 border rounded-full" />
+							<PiHeartFill className="p-1 text-white bg-red-400 rounded-full w-7 h-7" />
 							polite & respectful
 						</li>
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<HiLanguage className="w-6 h-6 p-1 border rounded-full" />
+							<HiLanguage className="p-1 text-white bg-blue-600 rounded-full w-7 h-7" />
 							fluent english & native
 						</li>
 					</ul>
 				</div>
 
-				<div className="w-1/2 py-4 text-sm sm:py-6 sm:text-xl">
+				<div className="w-1/2 py-4 text-sm sm:py-6 sm:text-lg">
 					<h2 className="flex flex-col items-center justify-center gap-2 mb-2 text-center sm:text-2xl sm:mb-6">
 						<PiHandshakeThin className="w-10 h-10 p-2 border rounded-full dark:border-gray-600 sm:w-14 sm:h-14" />
 						Environment
 					</h2>
 					<ul className="flex flex-col gap-2 ">
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiUsersThreeLight className="w-6 h-6 p-1 border rounded-full" />
+							<PiUsersThreeLight className="p-1 text-white bg-green-600 rounded-full w-7 h-7" />
 							efficient team player
 						</li>
 						<li className="flex items-center justify-center gap-2 rounded-full">
-							<PiUserLight className="w-6 h-6 p-1 border rounded-full" />
+							<PiUserLight className="p-1 text-white bg-red-600 rounded-full w-7 h-7" />
 							effective solo worker
 						</li>
 					</ul>
