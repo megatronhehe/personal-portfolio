@@ -27,7 +27,7 @@ const Projects = () => {
 					<a
 						href="https://github.com/megatronhehe"
 						target="_blank"
-						className="flex items-center gap-2 p-2 border rounded-full hover:bg-gray-700 hover:text-white hover:border-white"
+						className="flex items-center gap-2 p-2 border rounded-full hover:bg-gray-700 hover:text-white hover:border-white dark:hover:bg-white dark:hover:text-gray-700"
 					>
 						<p className="text-sm">check my repo!</p>
 						<BsGithub className="text-2xl" />

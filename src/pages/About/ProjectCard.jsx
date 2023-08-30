@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import {
 	PiCaretDown,
+	PiCaretUp,
 	PiPlayFill,
 	PiImageLight,
 	PiCodeBlockLight,
@@ -61,6 +62,7 @@ const ProjectCard = ({ project }) => {
 					</motion.div>
 				)}
 			</AnimatePresence>
+
 			<motion.button
 				whileHover={{ scale: 1.1 }}
 				onClick={() => {
@@ -68,7 +70,7 @@ const ProjectCard = ({ project }) => {
 				}}
 				className="absolute z-20 flex items-center justify-center w-10 h-10 text-2xl text-black bg-white bg-opacity-50 rounded-md top-2 right-2"
 			>
-				<PiCaretDown />
+				{toggleShow ? <PiCaretUp /> : <PiCaretDown />}
 			</motion.button>
 
 			<AnimatePresence>
