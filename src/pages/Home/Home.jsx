@@ -3,15 +3,26 @@ import satya3 from "../../assets/satyajpg3.jpg";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+import { useInView } from "react-intersection-observer";
+
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { PiDiamondsFourFill, PiArrowSquareOutLight } from "react-icons/pi";
 import BiodataModal from "./BiodataModal";
 
-const Home = () => {
+const Home = ({ setSectionInView }) => {
 	const [showBiodataModal, setShowBiodataModal] = useState(false);
+
+	const { ref, inView } = useInView();
+
+	useEffect(() => {
+		if (inView) {
+			setSectionInView("home");
+		}
+	}, [inView]);
 
 	return (
 		<section
+			ref={ref}
 			id="home"
 			className="relative flex flex-col items-center justify-center h-screen mb-40 realtive"
 		>

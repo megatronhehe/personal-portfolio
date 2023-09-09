@@ -5,15 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 const NavbarButton = ({
 	sectionName,
 	icon,
-	index,
-	sectionIndex,
-	setSectionIndex,
+	scrollToSection,
+	sectionInView,
+	setSectionInView,
+	isPopup = false,
 	setToggleInfoModal,
-	darkMode,
 }) => {
 	const [showSectionName, setShowSectionName] = useState(false);
-
-	const isIndexNumber = typeof index === "number";
 
 	return (
 		<motion.li
@@ -21,16 +19,19 @@ const NavbarButton = ({
 			onMouseLeave={() => setShowSectionName(false)}
 			whileHover={{ scale: 1.2, y: -4 }}
 			transition={{ type: "tween", duration: 0.1 }}
-			onClick={() =>
-				isIndexNumber
-					? setSectionIndex(index)
-					: setToggleInfoModal((prev) => !prev)
-			}
+			onClick={() => {
+				if (isPopup) {
+					setToggleInfoModal((prev) => !prev);
+				} else {
+					scrollToSection(sectionName);
+					setSectionInView(sectionName);
+				}
+			}}
 			className="relative flex items-center justify-center w-10 h-10 text-2xl sm:text-4xl"
 		>
 			{icon}
 			<AnimatePresence>
-				{sectionIndex === index && isIndexNumber && (
+				{sectionInView === sectionName && (
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { useInView } from "react-intersection-observer";
+
 import ContactButton from "./ContactButton";
 
 import { quotesData } from "../../data/data";
@@ -19,7 +21,15 @@ import {
 	BsDiamond,
 } from "react-icons/bs";
 
-const Contact = ({ setSectionIndex }) => {
+const Contact = ({ setSectionInView }) => {
+	const { ref, inView } = useInView();
+
+	useEffect(() => {
+		if (inView) {
+			setSectionInView("contact");
+		}
+	}, [inView]);
+
 	const [quotesIndex, setQuotesIndex] = useState(0);
 
 	const randomizeQuotesIndex = () => {
@@ -31,6 +41,7 @@ const Contact = ({ setSectionIndex }) => {
 
 	return (
 		<section
+			ref={ref}
 			id="contact"
 			className="flex flex-col items-center justify-between h-screen py-8 sm:justify-around"
 		>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { useInView } from "react-intersection-observer";
+
 import Skills from "./Skills";
 import Projects from "./Projects";
 
@@ -8,15 +10,20 @@ import { motion } from "framer-motion";
 import { PiDiamondsFourFill } from "react-icons/pi";
 import { AnimatePresence } from "framer-motion";
 
-const About = ({ setSectionIndex }) => {
+const About = ({ setSectionInView }) => {
 	const [selected, setSelected] = useState("skills");
 
+	const { ref, inView } = useInView();
+
 	useEffect(() => {
-		setSectionIndex(1);
-	}, []);
+		if (inView) {
+			setSectionInView("about");
+		}
+	}, [inView]);
 
 	return (
 		<section
+			ref={ref}
 			id="about"
 			className="flex flex-col items-center pt-6 mb-72 sm:pt-16"
 		>

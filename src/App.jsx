@@ -8,21 +8,20 @@ import Contact from "./pages/Contact/Contact";
 import ThemeContext from "./context/ThemeContext";
 
 function App() {
-	const [sectionIndex, setSectionIndex] = useState(0);
+	const [sectionInView, setSectionInView] = useState("home");
 
 	const { darkMode } = useContext(ThemeContext);
-
-	useEffect(() => {
-		setSectionIndex(0);
-	}, []);
 
 	return (
 		<main className={darkMode ? "dark" : ""}>
 			<div className="text-gray-600 transition-colors duration-1000 font-extralight dark:bg-gray-800 dark:text-gray-300">
-				<Navbar sectionIndex={sectionIndex} setSectionIndex={setSectionIndex} />
-				<Home setSectionIndex={setSectionIndex} />
-				<About setSectionIndex={setSectionIndex} />
-				<Contact setSectionIndex={setSectionIndex} />
+				<Navbar
+					sectionInView={sectionInView}
+					setSectionInView={setSectionInView}
+				/>
+				<Home setSectionInView={setSectionInView} />
+				<About setSectionInView={setSectionInView} />
+				<Contact setSectionInView={setSectionInView} />
 			</div>
 		</main>
 	);

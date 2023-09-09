@@ -21,16 +21,14 @@ import {
 } from "react-icons/pi";
 import {} from "react-icons/pi";
 
-const Navbar = ({ sectionIndex, setSectionIndex }) => {
+const Navbar = ({ sectionInView, setSectionInView }) => {
 	const { darkMode, setDarkMode } = useContext(ThemeContext);
-
-	const sectionsArray = ["home", "about", "contact"];
 
 	const [toggleNavbar, setToggleNavbar] = useState(true);
 	const [toggleInfoModal, setToggleInfoModal] = useState(false);
 
-	const scrollToSection = (sectionId) => {
-		const element = document.getElementById(sectionId);
+	const scrollToSection = (section) => {
+		const element = document.getElementById(section);
 		if (element) {
 			element.scrollIntoView({ behavior: "smooth" });
 		}
@@ -38,17 +36,15 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-		setSectionIndex(0);
 	};
 
 	const scrollToBottom = () => {
-		window.scrollTo({ bottom: 0, left: 0, behavior: "smooth" });
-		setSectionIndex(sectionsArray.length - 1);
+		window.scrollTo({
+			top: document.body.scrollHeight,
+			left: 0,
+			behavior: "smooth",
+		});
 	};
-
-	useEffect(() => {
-		scrollToSection(sectionsArray[sectionIndex]);
-	}, [sectionIndex]);
 
 	return (
 		<>
@@ -103,37 +99,36 @@ const Navbar = ({ sectionIndex, setSectionIndex }) => {
 						<nav>
 							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 transition-colors duration-1000 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md dark:bg-opacity-60">
 								<NavbarButton
-									sectionName="Home"
+									sectionName="home"
 									icon={<PiHouseLight />}
-									index={0}
-									sectionIndex={sectionIndex}
-									setSectionIndex={setSectionIndex}
+									scrollToSection={scrollToSection}
+									sectionInView={sectionInView}
+									setSectionInView={setSectionInView}
 									darkMode={darkMode}
 								/>
 
 								<NavbarButton
-									sectionName="About"
+									sectionName="about"
 									icon={<PiUserLight />}
-									index={1}
-									sectionIndex={sectionIndex}
-									setSectionIndex={setSectionIndex}
+									scrollToSection={scrollToSection}
+									sectionInView={sectionInView}
+									setSectionInView={setSectionInView}
 									darkMode={darkMode}
 								/>
 
 								<NavbarButton
-									sectionName="Contact"
+									sectionName="contact"
 									icon={<PiEnvelopeLight />}
-									index={2}
-									sectionIndex={sectionIndex}
-									setSectionIndex={setSectionIndex}
+									scrollToSection={scrollToSection}
+									sectionInView={sectionInView}
+									setSectionInView={setSectionInView}
 									darkMode={darkMode}
 								/>
 
 								<NavbarButton
-									sectionName="Info"
+									sectionName="info"
 									icon={<PiInfoLight />}
-									sectionIndex={sectionIndex}
-									setSectionIndex={setSectionIndex}
+									isPopup={true}
 									setToggleInfoModal={setToggleInfoModal}
 									darkMode={darkMode}
 								/>
