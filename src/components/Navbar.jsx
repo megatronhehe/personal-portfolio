@@ -103,7 +103,6 @@ const Navbar = ({ sectionInView, setSectionInView }) => {
 									icon={<PiHouseLight />}
 									scrollToSection={scrollToSection}
 									sectionInView={sectionInView}
-									setSectionInView={setSectionInView}
 									darkMode={darkMode}
 								/>
 
@@ -112,7 +111,6 @@ const Navbar = ({ sectionInView, setSectionInView }) => {
 									icon={<PiUserLight />}
 									scrollToSection={scrollToSection}
 									sectionInView={sectionInView}
-									setSectionInView={setSectionInView}
 									darkMode={darkMode}
 								/>
 
@@ -121,7 +119,6 @@ const Navbar = ({ sectionInView, setSectionInView }) => {
 									icon={<PiEnvelopeLight />}
 									scrollToSection={scrollToSection}
 									sectionInView={sectionInView}
-									setSectionInView={setSectionInView}
 									darkMode={darkMode}
 								/>
 
