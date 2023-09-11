@@ -7,7 +7,6 @@ const NavbarButton = ({
 	icon,
 	scrollToSection,
 	sectionInView,
-	setSectionInView,
 	isPopup = false,
 	setToggleInfoModal,
 }) => {
@@ -20,12 +19,9 @@ const NavbarButton = ({
 			whileHover={{ scale: 1.2, y: -4 }}
 			transition={{ type: "tween", duration: 0.1 }}
 			onClick={() => {
-				if (isPopup) {
-					setToggleInfoModal((prev) => !prev);
-				} else {
-					scrollToSection(sectionName);
-					setSectionInView(sectionName);
-				}
+				isPopup
+					? setToggleInfoModal((prev) => !prev)
+					: scrollToSection(sectionName);
 			}}
 			className="relative flex items-center justify-center w-10 h-10 text-2xl sm:text-4xl"
 		>

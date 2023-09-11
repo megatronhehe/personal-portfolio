@@ -11,6 +11,8 @@ import NavbarButton from "./NavbarButton";
 import {
 	PiCaretDoubleUpLight,
 	PiCaretDoubleDownLight,
+	PiCaretDownLight,
+	PiCaretUpLight,
 	PiSquaresFourFill,
 	PiHouseLight,
 	PiUserLight,
@@ -21,11 +23,12 @@ import {
 } from "react-icons/pi";
 import {} from "react-icons/pi";
 
-const Navbar = ({ sectionInView, setSectionInView }) => {
+const Navbar = ({ sectionInView }) => {
 	const { darkMode, setDarkMode } = useContext(ThemeContext);
 
 	const [toggleNavbar, setToggleNavbar] = useState(true);
 	const [toggleInfoModal, setToggleInfoModal] = useState(false);
+	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
 	const scrollToSection = (section) => {
 		const element = document.getElementById(section);
@@ -34,17 +37,26 @@ const Navbar = ({ sectionInView, setSectionInView }) => {
 		}
 	};
 
-	const scrollToTop = () => {
-		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+	const sectionsArray = ["home", "about", "contact"];
+
+	const scrollNext = () => {
+		setCurrentSectionIndex((prev) =>
+			prev === sectionsArray.length - 1 ? 0 : prev + 1
+		);
 	};
 
-	const scrollToBottom = () => {
-		window.scrollTo({
-			top: document.body.scrollHeight,
-			left: 0,
-			behavior: "smooth",
-		});
+	const scrollBack = () => {
+		setCurrentSectionIndex((prev) =>
+			prev === 0 ? sectionsArray.length - 1 : prev - 1
+		);
 	};
+
+	useEffect(() => {
+		scrollToSection(sectionsArray[currentSectionIndex]);
+	}, [currentSectionIndex]);
+
+	const isLastSection = currentSectionIndex === 2;
+	const isFirstSection = currentSectionIndex === 0;
 
 	return (
 		<>
@@ -60,30 +72,35 @@ const Navbar = ({ sectionInView, setSectionInView }) => {
 				{darkMode ? <PiMoonFill /> : <PiSunFill />}
 			</motion.button>
 
-			<motion.button
-				key={toggleNavbar ? "on" : "off"}
-				animate={{ rotate: 180 }}
-				whileHover={{ scale: 1.2 }}
-				onClick={() => setToggleNavbar((prev) => !prev)}
-				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 bottom-1 right-1"
-			>
-				<PiSquaresFourFill />
-			</motion.button>
-
-			<nav className="fixed z-20 flex items-center justify-center top-1 right-1">
-				<ul className="flex flex-col">
-					<motion.li
-						onClick={scrollToTop}
-						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-t-xl hover:bg-blue-300 dark:hover:bg-blue-300 dark:border-gray-600 dark:bg-gray-800 hover:border-white hover:text-white"
-					>
-						<PiCaretDoubleUpLight />
-					</motion.li>
-					<motion.li
-						onClick={scrollToBottom}
-						className="flex items-center justify-center w-8 h-8 bg-white border cursor-pointer sm:w-12 sm:h-12 rounded-b-xl hover:bg-blue-300 dark:hover:bg-blue-300 hover:border-white hover:text-white dark:border-gray-600 dark:bg-gray-800"
-					>
-						<PiCaretDoubleDownLight />
-					</motion.li>
+			<nav className="fixed z-40 bottom-1 right-1">
+				<ul className="flex flex-col items-center gap-2">
+					<li>
+						<button
+							onClick={scrollBack}
+							className="flex items-center justify-center text-2xl text-blue-300 duration-200 bg-white border rounded-xl dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-9 h-9 sm:w-12 sm:h-12 hover:bg-blue-300 hover:text-white dark:hover:bg-blue-300 dark:hover:text-gray-800"
+						>
+							{isFirstSection ? <PiCaretDoubleDownLight /> : <PiCaretUpLight />}
+						</button>
+					</li>
+					<li>
+						<button
+							onClick={scrollNext}
+							className="flex items-center justify-center mb-4 text-2xl text-blue-300 duration-200 bg-white border rounded-xl dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-9 h-9 sm:w-12 sm:h-12 hover:bg-blue-300 hover:text-white dark:hover:bg-blue-300 dark:hover:text-gray-800"
+						>
+							{isLastSection ? <PiCaretDoubleUpLight /> : <PiCaretDownLight />}
+						</button>
+					</li>
+					<li>
+						<motion.button
+							key={toggleNavbar ? "on" : "off"}
+							animate={{ rotate: 90 }}
+							whileHover={{ scale: 1.2 }}
+							onClick={() => setToggleNavbar((prev) => !prev)}
+							className="flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 "
+						>
+							<PiSquaresFourFill />
+						</motion.button>
+					</li>
 				</ul>
 			</nav>
 

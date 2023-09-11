@@ -20,6 +20,7 @@ import {
 	BsGithub,
 	BsDiamond,
 } from "react-icons/bs";
+import AnonymousMessageForm from "./AnonymousMessageForm";
 
 const Contact = ({ setSectionInView }) => {
 	const { ref, inView } = useInView();
@@ -31,6 +32,7 @@ const Contact = ({ setSectionInView }) => {
 	}, [inView]);
 
 	const [quotesIndex, setQuotesIndex] = useState(0);
+	const [toggleAnonMessageForm, setToggleAnonMessageForm] = useState(false);
 
 	const randomizeQuotesIndex = () => {
 		const randomNumber = Math.floor(Math.random() * quotesData.length);
@@ -99,6 +101,15 @@ const Contact = ({ setSectionInView }) => {
 						/>
 					</ul>
 				</div>
+
+				{/* <button
+					onClick={() => setToggleAnonMessageForm(true)}
+					className="flex flex-col items-center justify-center gap-2 sm:text-lg"
+				>
+					<span className="px-4 duration-200 hover:bg-gray-100 hover:text-gray-800 rounded-xl">
+						send me anonymous message
+					</span>
+				</button> */}
 			</div>
 
 			<div className="flex flex-col items-center justify-between text-xs text-gray-400 sm:text-sm ">
@@ -125,6 +136,14 @@ const Contact = ({ setSectionInView }) => {
 					</AnimatePresence>
 				</div>
 			</div>
+
+			{/* <AnimatePresence>
+				{toggleAnonMessageForm && (
+					<AnonymousMessageForm
+						setToggleAnonMessageForm={setToggleAnonMessageForm}
+					/>
+				)}
+			</AnimatePresence> */}
 		</section>
 	);
 };
