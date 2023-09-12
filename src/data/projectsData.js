@@ -2,6 +2,9 @@ import ecommerce1 from "../assets/project-ecommerce-images/ecommerce1.jpg";
 import ecommerce2 from "../assets/project-ecommerce-images/ecommerce2.jpg";
 import ecommerce3 from "../assets/project-ecommerce-images/ecommerce3.jpg";
 import ecommerce4 from "../assets/project-ecommerce-images/ecommerce4.jpg";
+import ecommerce5 from "../assets/project-ecommerce-images/ecommerce5.jpg";
+import ecommerce6 from "../assets/project-ecommerce-images/ecommerce6.jpg";
+import ecommerce7 from "../assets/project-ecommerce-images/ecommerce7.jpg";
 import ecommercelogo from "../assets/project-ecommerce-images/ecommercelogo.jpg";
 
 import orderpanel1 from "../assets/project-order-panel-images/orderpanel1.jpg";
@@ -32,7 +35,15 @@ export const projectData = [
 		logo: ecommercelogo,
 		description:
 			"An online clothing online shop complete with most of the actual online shop functionality like cart systems, ability to choose and pick color, and more.",
-		image: [ecommerce1, ecommerce2, ecommerce3, ecommerce4],
+		image: [
+			ecommerce1,
+			ecommerce2,
+			ecommerce3,
+			ecommerce4,
+			ecommerce5,
+			ecommerce6,
+			ecommerce7,
+		],
 		sc: "https://github.com/megatronhehe/ecommerce-website",
 	},
 	{

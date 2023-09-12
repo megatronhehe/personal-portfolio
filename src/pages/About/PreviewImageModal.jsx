@@ -31,7 +31,10 @@ const PreviewImageModal = ({ image, setToggleModal }) => {
 			>
 				<PiXLight />
 			</button>
-			<img className="w-full max-w-7xl" src={image[imageIndex]} />
+			<img
+				className="object-contain w-full max-w-7xl h-2/3"
+				src={image[imageIndex]}
+			/>
 			<button
 				onClick={prevImage}
 				className="absolute flex items-center justify-center w-10 h-10 text-white bg-gray-400 rounded-full bg-opacity-90 left-1 top-1/2"
