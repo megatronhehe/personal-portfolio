@@ -12,14 +12,6 @@ import { BsGithub } from "react-icons/bs";
 const Projects = () => {
 	const [showInfo, setShowInfo] = useState(false);
 
-	useEffect(() => {
-		if (showInfo) {
-			setTimeout(() => {
-				setShowInfo(false);
-			}, 3000);
-		}
-	}, [showInfo]);
-
 	const projectsElement = projectData.map((project) => (
 		<ProjectCard key={project.id} project={project} />
 	));
@@ -32,7 +24,8 @@ const Projects = () => {
 					<div className="flex gap-2">
 						Projects
 						<div
-							onClick={() => setShowInfo((prev) => !prev)}
+							onMouseEnter={() => setShowInfo(true)}
+							onMouseLeave={() => setShowInfo(false)}
 							className="relative flex items-center justify-center text-sm sm:text-lg"
 						>
 							<PiInfoFill className="absolute top-0 left-0 text-blue-400 animate-ping" />
