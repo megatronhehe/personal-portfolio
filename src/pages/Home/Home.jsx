@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { PiDiamondsFourFill, PiArrowSquareOutLight } from "react-icons/pi";
 import BiodataModal from "./BiodataModal";
+import ResumeButton from "./ResumeButton";
 
 const Home = ({ setSectionInView }) => {
 	const [showBiodataModal, setShowBiodataModal] = useState(false);
@@ -65,15 +66,7 @@ const Home = ({ setSectionInView }) => {
 					</a>
 				</motion.li>
 
-				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
-					<a
-						href="https://drive.google.com/file/d/1sqQI5g4iEuLcGofqSHlVMl3WaONryTb1/view?usp=drive_link"
-						target="_blank"
-						className="flex items-center gap-2 px-3 py-1 text-sm text-white bg-blue-400 rounded-md sm:text-xl"
-					>
-						résumé <PiArrowSquareOutLight />
-					</a>
-				</motion.li>
+				<ResumeButton />
 
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<button
