@@ -44,7 +44,7 @@ export const projectData = [
 			ecommerce6,
 			ecommerce7,
 		],
-		sc: "https://github.com/megatronhehe/ecommerce-website",
+		sc: "https://github.com/megatronhehe/ecommerce-2",
 	},
 	{
 		id: 1,
