@@ -18,6 +18,8 @@ import watchlist2 from "../assets/project-watchlist-images/watchlist2.jpg";
 import watchlist3 from "../assets/project-watchlist-images/watchlist3.jpg";
 import watchlist4 from "../assets/project-watchlist-images/watchlist4.jpg";
 import watchlist5 from "../assets/project-watchlist-images/watchlist5.jpg";
+import watchlist6 from "../assets/project-watchlist-images/watchlist6.jpg";
+import watchlist7 from "../assets/project-watchlist-images/watchlist7.jpg";
 import watchlistlogo from "../assets/project-watchlist-images/watchlistlogo.jpg";
 
 import todos1 from "../assets/project-todos-images/todos1.jpg";
@@ -61,8 +63,16 @@ export const projectData = [
 		logo: watchlistlogo,
 		description:
 			"App that helps you keep track on what you have or have not watch. It can be movies, shows, etc.Data fetches using IMDb API, giving access to every movies or shows that ever exist.",
-		image: [watchlist1, watchlist2, watchlist3, watchlist4, watchlist5],
-		sc: "https://github.com/megatronhehe/movie-watchlist",
+		image: [
+			watchlist1,
+			watchlist2,
+			watchlist3,
+			watchlist4,
+			watchlist5,
+			watchlist6,
+			watchlist7,
+		],
+		sc: "https://github.com/megatronhehe/movie-watchlist-2",
 	},
 	{
 		id: 3,
@@ -71,6 +81,6 @@ export const projectData = [
 		description:
 			"App that helps user to keep track of daily activities and plan for things to do in the future for a more organized and structured way to live a life.",
 		image: [todos1, todos2, todos3, todos4, todos5],
-		sc: "https://github.com/megatronhehe/to-do-list",
+		sc: "https://github.com/megatronhehe/calendar-app",
 	},
 ];
