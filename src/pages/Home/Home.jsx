@@ -1,31 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import satya3 from "../../assets/satyajpg3.jpg";
 
 import { AnimatePresence, motion } from "framer-motion";
-
-import { useInView } from "react-intersection-observer";
 
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { PiDiamondsFourFill, PiArrowSquareOutLight } from "react-icons/pi";
 import BiodataModal from "./BiodataModal";
 import ResumeButton from "./ResumeButton";
 
-const Home = ({ setSectionInView }) => {
+const Home = () => {
 	const [showBiodataModal, setShowBiodataModal] = useState(false);
 
-	const { ref, inView } = useInView();
-
-	useEffect(() => {
-		if (inView) {
-			setSectionInView("home");
-		}
-	}, [inView]);
-
 	return (
-		<section
-			ref={ref}
-			id="home"
-			className="relative flex flex-col items-center justify-center h-screen mb-40 realtive"
+		<motion.section
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className="relative flex flex-col items-center justify-center h-screen realtive"
 		>
 			<PiDiamondsFourFill className="mb-4 sm:text-xl" />
 			<span className="sm:text-xl">Hi, I'm..</span>
@@ -50,7 +41,7 @@ const Home = ({ setSectionInView }) => {
 				</div>
 			</div>
 
-			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl border-t border-gray-300 dark:border-gray-600 sm:w-2/3 lg:w-1/3 sm:text-4xl">
+			<ul className="flex items-center justify-around w-2/3 py-4 mt-8 text-2xl duration-1000 border-t border-gray-300 dark:border-gray-600 sm:w-2/3 lg:w-1/3 sm:text-4xl">
 				<motion.li whileHover={{ scale: 1.1, y: -5 }}>
 					<a
 						href="https://www.linkedin.com/in/ida-bagus-satya-mahendra-544129253/"
@@ -83,7 +74,7 @@ const Home = ({ setSectionInView }) => {
 					<BiodataModal setShowBiodataModal={setShowBiodataModal} />
 				)}
 			</AnimatePresence>
-		</section>
+		</motion.section>
 	);
 };
 

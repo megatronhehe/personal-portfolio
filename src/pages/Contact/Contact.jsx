@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import { useInView } from "react-intersection-observer";
-
 import ContactButton from "./ContactButton";
 
 import { quotesData } from "../../data/data";
@@ -22,15 +20,7 @@ import {
 } from "react-icons/bs";
 import AnonymousMessageForm from "./AnonymousMessageForm";
 
-const Contact = ({ setSectionInView }) => {
-	const { ref, inView } = useInView();
-
-	useEffect(() => {
-		if (inView) {
-			setSectionInView("contact");
-		}
-	}, [inView]);
-
+const Contact = () => {
 	const [quotesIndex, setQuotesIndex] = useState(0);
 	const [toggleAnonMessageForm, setToggleAnonMessageForm] = useState(false);
 
@@ -42,9 +32,10 @@ const Contact = ({ setSectionInView }) => {
 	const selectedQuote = quotesData[quotesIndex];
 
 	return (
-		<section
-			ref={ref}
-			id="contact"
+		<motion.section
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
 			className="flex flex-col items-center justify-between h-screen py-8 sm:justify-around"
 		>
 			<div className="flex flex-col items-center justify-center gap-16">
@@ -144,7 +135,7 @@ const Contact = ({ setSectionInView }) => {
 					/>
 				)}
 			</AnimatePresence> */}
-		</section>
+		</motion.section>
 	);
 };
 

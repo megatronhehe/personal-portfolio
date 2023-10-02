@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 
 import ThemeContext from "../context/ThemeContext";
 
@@ -9,10 +9,6 @@ import InfoModal from "./InfoModal";
 import NavbarButton from "./NavbarButton";
 
 import {
-	PiCaretDoubleUpLight,
-	PiCaretDoubleDownLight,
-	PiCaretDownLight,
-	PiCaretUpLight,
 	PiSquaresFourFill,
 	PiHouseLight,
 	PiUserLight,
@@ -20,43 +16,15 @@ import {
 	PiInfoLight,
 	PiMoonFill,
 	PiSunFill,
+	PiStackLight,
 } from "react-icons/pi";
 import {} from "react-icons/pi";
 
-const Navbar = ({ sectionInView }) => {
+const Navbar = () => {
 	const { darkMode, setDarkMode } = useContext(ThemeContext);
 
 	const [toggleNavbar, setToggleNavbar] = useState(true);
 	const [toggleInfoModal, setToggleInfoModal] = useState(false);
-	const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-
-	const scrollToSection = (section) => {
-		const element = document.getElementById(section);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-
-	const sectionsArray = ["home", "about", "contact"];
-
-	const scrollNext = () => {
-		setCurrentSectionIndex((prev) =>
-			prev === sectionsArray.length - 1 ? 0 : prev + 1
-		);
-	};
-
-	const scrollBack = () => {
-		setCurrentSectionIndex((prev) =>
-			prev === 0 ? sectionsArray.length - 1 : prev - 1
-		);
-	};
-
-	useEffect(() => {
-		scrollToSection(sectionsArray[currentSectionIndex]);
-	}, [currentSectionIndex]);
-
-	const isLastSection = currentSectionIndex === 2;
-	const isFirstSection = currentSectionIndex === 0;
 
 	return (
 		<>
@@ -72,37 +40,15 @@ const Navbar = ({ sectionInView }) => {
 				{darkMode ? <PiMoonFill /> : <PiSunFill />}
 			</motion.button>
 
-			<nav className="fixed z-40 bottom-1 right-1">
-				<ul className="flex flex-col items-center gap-2">
-					<li>
-						<button
-							onClick={scrollBack}
-							className="flex items-center justify-center text-2xl text-blue-300 duration-200 bg-white border rounded-xl dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-9 h-9 sm:w-12 sm:h-12 hover:bg-blue-300 hover:text-white dark:hover:bg-blue-300 dark:hover:text-gray-800"
-						>
-							{isFirstSection ? <PiCaretDoubleDownLight /> : <PiCaretUpLight />}
-						</button>
-					</li>
-					<li>
-						<button
-							onClick={scrollNext}
-							className="flex items-center justify-center mb-4 text-2xl text-blue-300 duration-200 bg-white border rounded-xl dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-9 h-9 sm:w-12 sm:h-12 hover:bg-blue-300 hover:text-white dark:hover:bg-blue-300 dark:hover:text-gray-800"
-						>
-							{isLastSection ? <PiCaretDoubleUpLight /> : <PiCaretDownLight />}
-						</button>
-					</li>
-					<li>
-						<motion.button
-							key={toggleNavbar ? "on" : "off"}
-							animate={{ rotate: 90 }}
-							whileHover={{ scale: 1.2 }}
-							onClick={() => setToggleNavbar((prev) => !prev)}
-							className="flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 "
-						>
-							<PiSquaresFourFill />
-						</motion.button>
-					</li>
-				</ul>
-			</nav>
+			<motion.button
+				key={toggleNavbar ? "on" : "off"}
+				animate={{ rotate: 90 }}
+				whileHover={{ scale: 1.2 }}
+				onClick={() => setToggleNavbar((prev) => !prev)}
+				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 bg-white border rounded-full dark:border-gray-600 dark:bg-gray-800 sm:text-4xl w-11 h-11 sm:w-16 sm:h-16 bottom-1 right-1"
+			>
+				<PiSquaresFourFill />
+			</motion.button>
 
 			<AnimatePresence>
 				{toggleNavbar && (
@@ -116,31 +62,35 @@ const Navbar = ({ sectionInView }) => {
 						<nav>
 							<ul className="flex items-center justify-between w-64 h-10 px-4 text-gray-700 transition-colors duration-1000 bg-white border dark:border-gray-600 dark:bg-gray-800 sm:w-96 sm:h-12 rounded-t-xl dark:text-gray-200 backdrop-filter bg-opacity-60 backdrop-blur-md dark:bg-opacity-60">
 								<NavbarButton
-									sectionName="home"
+									url="/"
+									sectionName="Home"
 									icon={<PiHouseLight />}
-									scrollToSection={scrollToSection}
-									sectionInView={sectionInView}
 									darkMode={darkMode}
 								/>
 
 								<NavbarButton
-									sectionName="about"
+									url="/skills"
+									sectionName="Skills"
 									icon={<PiUserLight />}
-									scrollToSection={scrollToSection}
-									sectionInView={sectionInView}
 									darkMode={darkMode}
 								/>
 
 								<NavbarButton
-									sectionName="contact"
+									url="/projects"
+									sectionName="Projects"
+									icon={<PiStackLight />}
+									darkMode={darkMode}
+								/>
+
+								<NavbarButton
+									url="/contact"
+									sectionName="Contact"
 									icon={<PiEnvelopeLight />}
-									scrollToSection={scrollToSection}
-									sectionInView={sectionInView}
 									darkMode={darkMode}
 								/>
 
 								<NavbarButton
-									sectionName="info"
+									sectionName="Info"
 									icon={<PiInfoLight />}
 									isPopup={true}
 									setToggleInfoModal={setToggleInfoModal}
@@ -160,68 +110,5 @@ const Navbar = ({ sectionInView }) => {
 		</>
 	);
 };
-
-{
-	/* <nav className="fixed z-40 bottom-2 left-2">
-				<ul className="flex flex-col-reverse justify-center gap-2">
-					<motion.li
-						whileHover={{ scale: 1.1 }}
-						onClick={() => setToggleNavbar((prev) => !prev)}
-						className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-white border shadow-md sm:h-20 sm:w-20 sm:text-4xl rounded-xl"
-					>
-						<motion.div
-							whileHover={{ rotate: 180 }}
-							transition={{ duration: 0.5 }}
-							className="flex items-center justify-center w-full h-full"
-						>
-							<PiSquaresFourFill />
-						</motion.div>
-					</motion.li>
-
-					<AnimatePresence>
-						{toggleNavbar && (
-							<motion.div
-								initial={{ opacity: 0, x: -100 }}
-								animate={{ opacity: 1, x: 0 }}
-								exit={{ opacity: 0, x: -100 }}
-								className="flex flex-col-reverse gap-2"
-							>
-								<motion.li
-									whileHover={{ scale: 1.1, y: -10 }}
-									onClick={() => setToggleInfoModal(true)}
-									className="flex items-center justify-center w-10 h-10 text-2xl text-white bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-								>
-									<PiInfoLight />
-								</motion.li>
-
-								<motion.li
-									whileHover={{ scale: 1.1, y: -10 }}
-									onClick={() => setSectionIndex(2)}
-									className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-								>
-									<PiEnvelopeLight />
-								</motion.li>
-
-								<motion.li
-									whileHover={{ scale: 1.1, y: -10 }}
-									onClick={() => setSectionIndex(1)}
-									className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-								>
-									<PiUserLight />
-								</motion.li>
-
-								<motion.li
-									whileHover={{ scale: 1.1, y: -10 }}
-									onClick={() => setSectionIndex(0)}
-									className="flex items-center justify-center w-10 h-10 text-2xl text-blue-400 bg-gray-700 rounded-full shadow-md sm:h-20 sm:w-20 sm:text-4xl"
-								>
-									<PiHouseLight />
-								</motion.li>
-							</motion.div>
-						)}
-					</AnimatePresence>
-				</ul>
-			</nav> */
-}
 
 export default Navbar;

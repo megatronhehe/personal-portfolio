@@ -37,6 +37,12 @@ export const projectData = [
 		logo: ecommercelogo,
 		description:
 			"An online clothing online shop complete with most of the actual online shop functionality like cart systems, ability to choose and pick color, and more.",
+		features: [
+			"Cart system",
+			"Customize product's color and size",
+			"Responsive design",
+			"Simple filter method",
+		],
 		image: [
 			ecommerce1,
 			ecommerce2,
@@ -54,6 +60,11 @@ export const projectData = [
 		logo: orderpanellogo,
 		description:
 			"An app to help restaurant operator to deal with customer orders,complete functionality to CRUD a customer order, and count pricetotal of each order.",
+		features: [
+			"Cart system",
+			"Customize product's color and size",
+			"Responsive design",
+		],
 		image: [orderpanel1, orderpanel2, orderpanel3, orderpanel4],
 		sc: "https://github.com/megatronhehe/food-ordering-panel",
 	},
@@ -63,6 +74,11 @@ export const projectData = [
 		logo: watchlistlogo,
 		description:
 			"App that helps you keep track on what you have or have not watch. It can be movies, shows, etc.Data fetches using IMDb API, giving access to every movies or shows that ever exist.",
+		features: [
+			"Cart system",
+			"Customize product's color and size",
+			"Responsive design",
+		],
 		image: [
 			watchlist1,
 			watchlist2,
@@ -81,6 +97,11 @@ export const projectData = [
 		description:
 			"App that helps user to keep track of daily activities and plan for things to do in the future for a more organized and structured way to live a life.",
 		image: [todos1, todos2, todos3, todos4, todos5],
+		features: [
+			"Cart system",
+			"Customize product's color and size",
+			"Responsive design",
+		],
 		sc: "https://github.com/megatronhehe/calendar-app",
 	},
 ];
