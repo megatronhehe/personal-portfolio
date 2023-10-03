@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
-import {} from "react-icons/pi";
+import { motion } from "framer-motion";
 
 import {
-	PiInfo,
 	PiPlayFill,
-	PiImageLight,
 	PiCode,
 	PiCaretLeftBold,
 	PiCaretRightBold,
+	PiXLight,
 } from "react-icons/pi";
 const ProjectDetailsModal = ({ project, setShowInfo }) => {
 	const [currImageIndex, setCurrImageIndex] = useState(0);
@@ -23,17 +22,36 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 		setCurrImageIndex((prev) => (prev === 0 ? imagesLength - 1 : prev - 1));
 	};
 
+	const imageButtonsElement = project.image.map((image, i) => (
+		<li
+			onClick={() => setCurrImageIndex(i)}
+			className={`w-2 h-2  rounded-xl cursor-pointer ${
+				currImageIndex === i ? "bg-blue-400" : "bg-gray-600"
+			}`}
+			key={image}
+		></li>
+	));
+
 	return (
-		<div
+		<motion.section
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
 			onClick={() => setShowInfo(false)}
 			className="fixed top-0 left-0 z-40 flex items-center justify-center w-full h-full p-8 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"
 		>
-			<div
+			<motion.div
+				initial={{ opacity: 0, y: -30 }}
+				animate={{ opacity: 1, y: 0 }}
+				exit={{ opacity: 0, y: -30 }}
 				onClick={(e) => e.stopPropagation()}
-				className="flex flex-col w-full max-w-4xl gap-4 text-sm bg-gray-800 rounded-xl sm:flex-row"
+				className="relative flex flex-col w-full max-w-4xl text-sm bg-gray-800 sm:gap-4 rounded-xl sm:flex-row"
 			>
 				<div className="relative flex flex-col items-center justify-center sm:w-4/6">
-					<img
+					<motion.img
+						key={currImageIndex}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
 						src={project.image[currImageIndex]}
 						className="object-cover w-full rounded-lg aspect-square"
 					/>
@@ -50,8 +68,9 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 						<PiCaretRightBold />
 					</button>
 
-					<div className="absolute px-3 py-1 text-sm font-semibold tracking-widest bg-black bottom-2 rounded-xl">
+					<div className="absolute bottom-0 flex flex-col items-center gap-1 px-3 py-1 text-sm font-semibold tracking-widest bg-black rounded-t-xl">
 						{currImageIndex + 1}/{imagesLength}
+						<ul className="flex gap-2 ">{imageButtonsElement}</ul>
 					</div>
 				</div>
 
@@ -63,30 +82,28 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 							<li key={i}>- {feature}</li>
 						))}
 					</ul>
-					<ul className="flex gap-2">
-						<li className="w-1/2 ">
-							<a
-								href=""
-								className="flex flex-col items-center justify-center gap-2 p-2 text-red-400 duration-200 border border-red-400 rounded-xl hover:animate-pulse hover:scale-105"
-							>
-								<PiPlayFill className="text-xl" />
-								<span className="font-normal ">Live demo</span>
-							</a>
-						</li>
-						<li className="w-1/2 ">
-							<a
-								href={project.sc}
-								target="_blank"
-								className="flex flex-col items-center justify-center gap-2 p-2 text-blue-400 duration-200 border border-blue-400 rounded-xl hover:animate-pulse hover:scale-105"
-							>
-								<PiCode className="text-xl " />
-								<span className="font-normal ">Source code</span>
-							</a>
-						</li>
-					</ul>
+
+					<div className="flex justify-around">
+						<a
+							href={project.sc}
+							target="_blank"
+							className="flex items-center gap-2"
+						>
+							<PiPlayFill />
+							Live demo
+						</a>
+						<a
+							href={project.sc}
+							target="_blank"
+							className="flex items-center gap-2"
+						>
+							<PiCode />
+							Source code
+						</a>
+					</div>
 				</div>
-			</div>
-		</div>
+			</motion.div>
+		</motion.section>
 	);
 };
 
