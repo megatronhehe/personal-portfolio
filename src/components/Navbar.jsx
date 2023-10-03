@@ -11,12 +11,16 @@ import NavbarButton from "./NavbarButton";
 import {
 	PiSquaresFourFill,
 	PiHouseLight,
+	PiHouseFill,
 	PiUserLight,
+	PiUserFill,
+	PiStackLight,
+	PiStackFill,
 	PiEnvelopeLight,
+	PiEnvelopeFill,
 	PiInfoLight,
 	PiMoonFill,
 	PiSunFill,
-	PiStackLight,
 } from "react-icons/pi";
 import {} from "react-icons/pi";
 
@@ -65,6 +69,7 @@ const Navbar = () => {
 									url="/"
 									sectionName="Home"
 									icon={<PiHouseLight />}
+									activeIcon={<PiHouseFill />}
 									darkMode={darkMode}
 								/>
 
@@ -72,6 +77,7 @@ const Navbar = () => {
 									url="/skills"
 									sectionName="Skills"
 									icon={<PiUserLight />}
+									activeIcon={<PiUserFill />}
 									darkMode={darkMode}
 								/>
 
@@ -79,6 +85,7 @@ const Navbar = () => {
 									url="/projects"
 									sectionName="Projects"
 									icon={<PiStackLight />}
+									activeIcon={<PiStackFill />}
 									darkMode={darkMode}
 								/>
 
@@ -86,6 +93,7 @@ const Navbar = () => {
 									url="/contact"
 									sectionName="Contact"
 									icon={<PiEnvelopeLight />}
+									activeIcon={<PiEnvelopeFill />}
 									darkMode={darkMode}
 								/>
 

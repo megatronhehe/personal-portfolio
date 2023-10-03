@@ -10,6 +10,7 @@ const NavbarButton = ({
 	url,
 	sectionName,
 	icon,
+	activeIcon,
 	isPopup = false,
 	setToggleInfoModal,
 }) => {
@@ -27,13 +28,7 @@ const NavbarButton = ({
 		>
 			{({ isActive }) => (
 				<>
-					{icon}
-
-					{isActive && !isPopup ? (
-						<PiDiamondFill className="absolute text-base text-blue-400 -top-3 animate-bounce" />
-					) : (
-						""
-					)}
+					{isActive && !isPopup ? activeIcon : icon}
 
 					<AnimatePresence>
 						{showSectionName && (
