@@ -25,7 +25,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 	const imageButtonsElement = project.image.map((image, i) => (
 		<li
 			onClick={() => setCurrImageIndex(i)}
-			className={`w-2 h-2  rounded-xl cursor-pointer ${
+			className={`w-2 h-2  rounded-xl cursor-pointer duration-200 ${
 				currImageIndex === i ? "bg-blue-400" : "bg-gray-600"
 			}`}
 			key={image}
@@ -38,7 +38,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 			onClick={() => setShowInfo(false)}
-			className="fixed top-0 left-0 z-40 flex flex-col items-center justify-center w-full h-full gap-2 p-6 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"
+			className="fixed top-0 left-0 z-40 flex flex-col items-center justify-center w-full h-full gap-2 p-6 bg-opacity-10 backdrop-filter backdrop-blur-sm"
 		>
 			<button className="flex items-center justify-center w-8 h-8 py-2 text-white bg-red-400 rounded-full hover:bg-red-500">
 				<PiXLight />
@@ -48,7 +48,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 				animate={{ opacity: 1, y: 0 }}
 				exit={{ opacity: 0, y: -30 }}
 				onClick={(e) => e.stopPropagation()}
-				className="relative flex flex-col w-full max-w-4xl text-sm bg-gray-800 sm:gap-4 rounded-xl sm:flex-row"
+				className="relative flex flex-col w-full max-w-4xl text-sm bg-gray-100 shadow-lg dark:bg-gray-900 sm:gap-4 rounded-xl sm:flex-row"
 			>
 				<div className="relative flex flex-col items-center justify-center sm:w-4/6">
 					<motion.img
@@ -60,18 +60,18 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 					/>
 					<button
 						onClick={prevImage}
-						className="absolute flex items-center justify-center w-10 h-10 bg-black rounded-full -left-5 bg-opacity-60 backdrop-filter backdrop-blur-md"
+						className="absolute flex items-center justify-center w-10 h-10 text-white bg-black rounded-full -left-5 bg-opacity-60 backdrop-filter backdrop-blur-md"
 					>
 						<PiCaretLeftBold />
 					</button>
 					<button
 						onClick={nextImage}
-						className="absolute flex items-center justify-center w-10 h-10 bg-black rounded-full -right-5 bg-opacity-60 backdrop-filter backdrop-blur-md"
+						className="absolute flex items-center justify-center w-10 h-10 text-white bg-black rounded-full -right-5 bg-opacity-60 backdrop-filter backdrop-blur-md"
 					>
 						<PiCaretRightBold />
 					</button>
 
-					<div className="absolute bottom-0 flex flex-col items-center gap-1 px-3 py-1 text-sm font-semibold tracking-widest bg-black rounded-t-xl">
+					<div className="absolute bottom-0 flex flex-col items-center gap-1 px-3 py-1 text-xs font-semibold tracking-widest text-white bg-black rounded-t-xl">
 						{currImageIndex + 1}/{imagesLength}
 						<ul className="flex gap-2 ">{imageButtonsElement}</ul>
 					</div>

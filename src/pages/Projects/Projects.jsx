@@ -3,7 +3,6 @@ import React from "react";
 import { projectData } from "../../data/projectsData";
 
 import { PiStackLight } from "react-icons/pi";
-import { BsFillExclamationCircleFill } from "react-icons/bs";
 
 import ProjectCard from "./ProjectCard";
 
