@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import ContactButton from "./ContactButton";
 
@@ -18,16 +18,15 @@ import {
 	BsGithub,
 	BsDiamond,
 } from "react-icons/bs";
-import AnonymousMessageForm from "./AnonymousMessageForm";
 
 const Contact = () => {
 	const [quotesIndex, setQuotesIndex] = useState(0);
-	const [toggleAnonMessageForm, setToggleAnonMessageForm] = useState(false);
 
-	const randomizeQuotesIndex = () => {
-		const randomNumber = Math.floor(Math.random() * quotesData.length);
-		setQuotesIndex((prev) => (prev === randomNumber ? 0 : randomNumber));
+	const getNextQuote = () => {
+		setQuotesIndex((prev) => (prev >= quotesData.length - 1 ? 0 : prev + 1));
 	};
+
+	console.log(quotesIndex);
 
 	const selectedQuote = quotesData[quotesIndex];
 
@@ -92,15 +91,6 @@ const Contact = () => {
 						/>
 					</ul>
 				</div>
-
-				{/* <button
-					onClick={() => setToggleAnonMessageForm(true)}
-					className="flex flex-col items-center justify-center gap-2 sm:text-lg"
-				>
-					<span className="px-4 duration-200 hover:bg-gray-100 hover:text-gray-800 rounded-xl">
-						send me anonymous message
-					</span>
-				</button> */}
 			</div>
 
 			<div className="flex flex-col items-center justify-between text-xs text-gray-400 sm:text-sm ">
@@ -109,7 +99,7 @@ const Contact = () => {
 					animate={{ rotate: 360 }}
 					transition={{ duration: 1.5 }}
 				>
-					<BsDiamond onClick={randomizeQuotesIndex} />
+					<BsDiamond onClick={getNextQuote} />
 				</motion.button>
 
 				<div className="h-20 ">
@@ -127,14 +117,6 @@ const Contact = () => {
 					</AnimatePresence>
 				</div>
 			</div>
-
-			{/* <AnimatePresence>
-				{toggleAnonMessageForm && (
-					<AnonymousMessageForm
-						setToggleAnonMessageForm={setToggleAnonMessageForm}
-					/>
-				)}
-			</AnimatePresence> */}
 		</motion.section>
 	);
 };
