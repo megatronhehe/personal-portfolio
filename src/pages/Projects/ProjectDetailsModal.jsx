@@ -38,8 +38,11 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
 			onClick={() => setShowInfo(false)}
-			className="fixed top-0 left-0 z-40 flex items-center justify-center w-full h-full p-8 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"
+			className="fixed top-0 left-0 z-40 flex flex-col items-center justify-center w-full h-full gap-2 p-6 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm"
 		>
+			<button className="flex items-center justify-center w-8 h-8 py-2 text-white bg-red-400 rounded-full hover:bg-red-500">
+				<PiXLight />
+			</button>
 			<motion.div
 				initial={{ opacity: 0, y: -30 }}
 				animate={{ opacity: 1, y: 0 }}

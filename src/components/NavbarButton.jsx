@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
 import { NavLink } from "react-router-dom";
-
-import { PiDiamondFill } from "react-icons/pi";
 
 const NavbarButton = ({
 	url,
@@ -15,6 +13,14 @@ const NavbarButton = ({
 	setToggleInfoModal,
 }) => {
 	const [showSectionName, setShowSectionName] = useState(false);
+
+	useEffect(() => {
+		if (showSectionName) {
+			setTimeout(() => {
+				setShowSectionName(false);
+			}, 2000);
+		}
+	}, [showSectionName]);
 
 	return (
 		<NavLink

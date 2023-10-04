@@ -26,8 +26,6 @@ const Contact = () => {
 		setQuotesIndex((prev) => (prev >= quotesData.length - 1 ? 0 : prev + 1));
 	};
 
-	console.log(quotesIndex);
-
 	const selectedQuote = quotesData[quotesIndex];
 
 	return (
