@@ -61,9 +61,9 @@ export const projectData = [
 		description:
 			"An app to help restaurant operator to deal with customer orders,complete functionality to CRUD a customer order, and count pricetotal of each order.",
 		features: [
-			"Cart system",
-			"Customize product's color and size",
-			"Responsive design",
+			"Make orders",
+			"Customize selected order",
+			"Mark order as completed",
 		],
 		image: [orderpanel1, orderpanel2, orderpanel3, orderpanel4],
 		sc: "https://github.com/megatronhehe/food-ordering-panel",
@@ -75,9 +75,9 @@ export const projectData = [
 		description:
 			"App that helps you keep track on what you have or have not watch. It can be movies, shows, etc.Data fetches using IMDb API, giving access to every movies or shows that ever exist.",
 		features: [
-			"Cart system",
-			"Customize product's color and size",
-			"Responsive design",
+			"Search movies",
+			"Standard CRUD on movies to personal watchlist",
+			"Simple statistics of completion",
 		],
 		image: [
 			watchlist1,
@@ -98,9 +98,11 @@ export const projectData = [
 			"App that helps user to keep track of daily activities and plan for things to do in the future for a more organized and structured way to live a life.",
 		image: [todos1, todos2, todos3, todos4, todos5],
 		features: [
-			"Cart system",
-			"Customize product's color and size",
-			"Responsive design",
+			"Create activities based on selected date",
+			"CRUD activity",
+			"Mark activity as completed",
+			"Mark an event on a date",
+			"Simple statistics of completion and upcoming events",
 		],
 		sc: "https://github.com/megatronhehe/calendar-app",
 	},
