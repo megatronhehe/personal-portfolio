@@ -2,7 +2,7 @@ import React from "react";
 
 import { projectData } from "../../data/projectsData";
 
-import { PiStackLight } from "react-icons/pi";
+import { PiStackLight, PiArrowSquareOutLight } from "react-icons/pi";
 
 import ProjectCard from "./ProjectCard";
 
@@ -31,6 +31,14 @@ const About = () => {
 							Here are some of my featured projects. All the of the projects are
 							originally made by me, my own code, and my own design.
 						</p>
+
+						<a
+							href="https://github.com/megatronhehe?tab=repositories"
+							target="_blank"
+							className="flex items-center gap-2 font-normal duration-200 hover:font-bold animate-bounce hover:text-blue-400"
+						>
+							my github repo <PiArrowSquareOutLight className="text-xl" />
+						</a>
 					</div>
 				</section>
 
