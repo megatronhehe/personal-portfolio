@@ -7,6 +7,7 @@ import { PiStackLight, PiArrowSquareOutLight } from "react-icons/pi";
 import ProjectCard from "./ProjectCard";
 
 import { motion } from "framer-motion";
+import { GithubCard } from "./GithubCard";
 
 const About = () => {
 	const projectCardsElement = projectData.map((project) => (
@@ -43,8 +44,9 @@ const About = () => {
 				</section>
 
 				<section className="flex flex-col h-2/3">
-					<ul className="grid grid-cols-2 gap-2 p-2 overflow-auto sm:grid-cols-3">
+					<ul className="grid grid-cols-2 gap-2 p-2 overflow-auto sm:grid-cols-2 md:grid-cols-3">
 						{projectCardsElement}
+						<GithubCard />
 					</ul>
 				</section>
 			</div>
