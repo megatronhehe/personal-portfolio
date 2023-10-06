@@ -27,8 +27,14 @@ import todos2 from "../assets/project-todos-images/todos2.jpg";
 import todos3 from "../assets/project-todos-images/todos3.jpg";
 import todos4 from "../assets/project-todos-images/todos4.jpg";
 import todos5 from "../assets/project-todos-images/todos5.jpg";
-
 import todoslogo from "../assets/project-todos-images/todoslogo.jpg";
+
+import realestate1 from "../assets/project-realestate-images/realestate1.jpg";
+import realestate2 from "../assets/project-realestate-images/realestate2.jpg";
+import realestate3 from "../assets/project-realestate-images/realestate3.jpg";
+import realestate4 from "../assets/project-realestate-images/realestate4.jpg";
+import realestate5 from "../assets/project-realestate-images/realestate5.jpg";
+import realestatelogo from "../assets/project-realestate-images/realestatelogo.jpg";
 
 export const projectData = [
 	{
@@ -73,11 +79,11 @@ export const projectData = [
 		title: "Movie Watchlist Tracker",
 		logo: watchlistlogo,
 		description:
-			"App that helps you keep track on what you have or have not watch. It can be movies, shows, etc.Data fetches using IMDb API, giving access to every movies or shows that ever exist.",
+			"App that helps you keep track on what you have or have not watch. It can be movies, shows, etc. Data fetches using IMDb API, giving access to every movies or shows that ever exist.",
 		features: [
 			"Search movies",
 			"Standard CRUD on movies to personal watchlist",
-			"Simple statistics of completion",
+			"Responsive design",
 		],
 		image: [
 			watchlist1,
@@ -98,12 +104,21 @@ export const projectData = [
 			"App that helps user to keep track of daily activities and plan for things to do in the future for a more organized and structured way to live a life.",
 		image: [todos1, todos2, todos3, todos4, todos5],
 		features: [
-			"Create activities based on selected date",
-			"CRUD activity",
+			"CRUD activity based on date",
 			"Mark activity as completed",
 			"Mark an event on a date",
-			"Simple statistics of completion and upcoming events",
+			"Responsive design",
 		],
+		sc: "https://github.com/megatronhehe/calendar-app",
+	},
+	{
+		id: 4,
+		title: "Personal real estate website",
+		logo: realestatelogo,
+		description:
+			"Personal real estate website that showcase personal real estates for sale",
+		image: [realestate1, realestate2, realestate3, realestate4, realestate5],
+		features: ["Showcase real estate", "Responsive design"],
 		sc: "https://github.com/megatronhehe/calendar-app",
 	},
 ];
