@@ -5,7 +5,7 @@ import { PiArrowSquareOutLight } from "react-icons/pi";
 
 export const GithubCard = () => {
 	return (
-		<li className="flex-shrink-0 w-full h-48 sm:h-64 rounded-xl group">
+		<li className="flex-shrink-0 w-3/4 rounded-xl group snap-center sm:w-full">
 			<a
 				href="https://github.com/megatronhehe?tab=repositories"
 				target="_blank"

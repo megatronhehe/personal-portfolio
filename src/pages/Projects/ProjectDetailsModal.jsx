@@ -25,8 +25,8 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 	const imageButtonsElement = project.image.map((image, i) => (
 		<li
 			onClick={() => setCurrImageIndex(i)}
-			className={`w-2 h-2  rounded-xl cursor-pointer duration-200 ${
-				currImageIndex === i ? "bg-blue-400" : "bg-gray-600"
+			className={`w-2 h-2 rounded-xl cursor-pointer duration-200 ${
+				currImageIndex === i ? "bg-blue-400 w-6" : "bg-gray-600 w-2"
 			}`}
 			key={image}
 		></li>
@@ -40,7 +40,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 			onClick={() => setShowInfo(false)}
 			className="fixed top-0 left-0 z-40 flex flex-col items-center justify-center w-full h-full gap-2 p-6 bg-opacity-10 backdrop-filter backdrop-blur-sm"
 		>
-			<button className="flex items-center justify-center w-8 h-8 py-2 text-white bg-red-400 rounded-full hover:bg-red-500">
+			<button className="flex items-center justify-center w-8 h-8 py-2 text-white duration-200 bg-red-400 rounded-full hover:bg-red-500 hover:scale-110">
 				<PiXLight />
 			</button>
 			<motion.div
@@ -60,13 +60,13 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 					/>
 					<button
 						onClick={prevImage}
-						className="absolute flex items-center justify-center w-10 h-10 text-white bg-black rounded-full -left-5 bg-opacity-60 backdrop-filter backdrop-blur-md"
+						className="absolute flex items-center justify-center w-10 h-10 text-white duration-200 bg-black rounded-full -left-5 bg-opacity-60 backdrop-filter backdrop-blur-md hover:scale-110 hover:bg-opacity-40"
 					>
 						<PiCaretLeftBold />
 					</button>
 					<button
 						onClick={nextImage}
-						className="absolute flex items-center justify-center w-10 h-10 text-white bg-black rounded-full -right-5 bg-opacity-60 backdrop-filter backdrop-blur-md"
+						className="absolute flex items-center justify-center w-10 h-10 text-white duration-200 bg-black rounded-full -right-5 bg-opacity-60 backdrop-filter backdrop-blur-md hover:scale-110 hover:bg-opacity-40"
 					>
 						<PiCaretRightBold />
 					</button>
@@ -90,7 +90,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 						<a
 							href={project.sc}
 							target="_blank"
-							className="flex items-center gap-2"
+							className="flex items-center gap-2 duration-200 hover:text-red-400 hover:scale-110"
 						>
 							<PiPlayFill />
 							Live demo
@@ -98,7 +98,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 						<a
 							href={project.sc}
 							target="_blank"
-							className="flex items-center gap-2"
+							className="flex items-center gap-2 duration-200 hover:text-blue-400 hover:scale-110"
 						>
 							<PiCode />
 							Source code

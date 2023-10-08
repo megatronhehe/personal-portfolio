@@ -36,7 +36,7 @@ const About = () => {
 						<a
 							href="https://github.com/megatronhehe?tab=repositories"
 							target="_blank"
-							className="flex items-center gap-2 font-normal duration-200 hover:font-bold  hover:text-blue-400"
+							className="flex items-center gap-2 font-normal duration-200 hover:font-bold hover:text-blue-400"
 						>
 							my github repo <PiArrowSquareOutLight className="text-xl" />
 						</a>
@@ -44,7 +44,7 @@ const About = () => {
 				</section>
 
 				<section className="flex flex-col h-2/3">
-					<ul className="grid grid-cols-2 gap-2 p-2 overflow-auto sm:grid-cols-2 md:grid-cols-3">
+					<ul className="flex gap-4 p-4 overflow-auto snap-x snap-mandatory sm:grid sm:grid-cols-3">
 						{projectCardsElement}
 						<GithubCard />
 					</ul>
@@ -53,5 +53,12 @@ const About = () => {
 		</motion.section>
 	);
 };
+
+{
+	/* <ul className="grid grid-cols-2 gap-2 p-2 overflow-auto sm:grid-cols-2 md:grid-cols-3">
+						{projectCardsElement}
+						<GithubCard />
+					</ul> */
+}
 
 export default About;

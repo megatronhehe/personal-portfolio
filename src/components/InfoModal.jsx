@@ -71,17 +71,7 @@ const InfoModal = ({ setToggleInfoModal }) => {
 				</ul>
 			</div>
 
-			<div className="flex flex-col items-center justify-center">
-				<h3>Thankyou for visiting {":)"}</h3>
-				<span>here's a present for you!</span>
-				<motion.a
-					whileHover={{ scale: 1.2 }}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-					target="_blank"
-				>
-					<PiGiftLight className="w-16 h-16 p-2 mt-4 text-4xl bg-gray-800 rounded-full hover:bg-blue-300" />
-				</motion.a>
-			</div>
+			<p>thanks for visiting</p>
 
 			<h1 className="text-center text-gray-400">
 				satya.dev 2023 - frontend web developer

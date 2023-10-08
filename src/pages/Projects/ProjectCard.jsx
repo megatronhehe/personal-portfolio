@@ -10,13 +10,15 @@ const ProjectCard = ({ project }) => {
 
 	return (
 		<>
-			<li className="relative flex-shrink-0 w-full h-48 overflow-hidden bg-black sm:h-64 rounded-xl group">
+			<li className="relative flex-shrink-0 w-3/4 overflow-hidden bg-black rounded-xl group aspect-square snap-center sm:w-full">
 				<img
 					src={`../${project.logo}`}
 					className="absolute top-0 left-0 object-cover w-full h-full duration-500 group-hover:scale-110"
 				/>
-				<div className="absolute top-0 left-0 flex flex-col items-center justify-center invisible w-full h-full gap-6 p-4 duration-500 bg-black opacity-0 bg-opacity-10 group-hover:bg-opacity-90 group-hover:visible group-hover:opacity-100">
-					<h1 className="font-semibold text-center">{project.title}</h1>
+				<div className="absolute top-0 left-0 flex flex-col items-center justify-center invisible w-full h-full gap-6 p-4 duration-500 bg-black opacity-0 bg-opacity-10 group-hover:bg-opacity-70 group-hover:visible group-hover:opacity-100">
+					<h1 className="w-2/3 font-semibold text-center text-white">
+						{project.title}
+					</h1>
 
 					<ul className="absolute left-0 flex justify-between w-full text-sm bottom-4">
 						<ProjectCardButton icon={<PiPlayFill />} url={project.sc} />
