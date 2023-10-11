@@ -55,6 +55,8 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 						key={currImageIndex}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
+						loading="lazy"
+						alt={`preview image ${currImageIndex + 1}`}
 						src={project.image[currImageIndex]}
 						className="object-cover w-full rounded-lg aspect-square"
 					/>
@@ -64,6 +66,7 @@ const ProjectDetailsModal = ({ project, setShowInfo }) => {
 					>
 						<PiCaretLeftBold />
 					</button>
+
 					<button
 						onClick={nextImage}
 						className="absolute flex items-center justify-center w-10 h-10 text-white duration-200 bg-black rounded-full -right-5 bg-opacity-60 backdrop-filter backdrop-blur-md hover:scale-110 hover:bg-opacity-40"

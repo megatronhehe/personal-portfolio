@@ -26,6 +26,8 @@ const Home = () => {
 				<img
 					src={satya3}
 					className="w-72 h-72  -mb-0.5 border-8 border-blue-400 rounded-full  object-cover"
+					loading="lazy"
+					alt="Profile picture of satya"
 				/>
 
 				<div className="flex items-center justify-between w-24 h-4 text-white bg-blue-400 ">

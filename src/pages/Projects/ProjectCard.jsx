@@ -14,6 +14,8 @@ const ProjectCard = ({ project }) => {
 				<img
 					src={`../${project.logo}`}
 					className="absolute top-0 left-0 object-cover w-full h-full duration-500 group-hover:scale-110"
+					loading="lazy"
+					alt={`image of ${project.title}`}
 				/>
 				<div className="absolute top-0 left-0 flex flex-col items-center justify-center invisible w-full h-full gap-6 p-4 duration-500 bg-black opacity-0 bg-opacity-10 group-hover:bg-opacity-70 group-hover:visible group-hover:opacity-100">
 					<h1 className="w-2/3 font-semibold text-center text-white">
