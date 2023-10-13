@@ -54,6 +54,13 @@ const Navbar = () => {
 				<PiSquaresFourFill />
 			</motion.button>
 
+			<button
+				onClick={() => setToggleInfoModal((prev) => !prev)}
+				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 sm:text-4xl top-2 right-2"
+			>
+				<PiInfoLight />
+			</button>
+
 			<AnimatePresence>
 				{toggleNavbar && (
 					<motion.div
@@ -94,14 +101,6 @@ const Navbar = () => {
 									sectionName="Contact"
 									icon={<PiEnvelopeLight />}
 									activeIcon={<PiEnvelopeFill />}
-									darkMode={darkMode}
-								/>
-
-								<NavbarButton
-									sectionName="Info"
-									icon={<PiInfoLight />}
-									isPopup={true}
-									setToggleInfoModal={setToggleInfoModal}
 									darkMode={darkMode}
 								/>
 							</ul>

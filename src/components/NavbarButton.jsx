@@ -4,14 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { NavLink } from "react-router-dom";
 
-const NavbarButton = ({
-	url,
-	sectionName,
-	icon,
-	activeIcon,
-	isPopup = false,
-	setToggleInfoModal,
-}) => {
+const NavbarButton = ({ url, sectionName, icon, activeIcon }) => {
 	const [showSectionName, setShowSectionName] = useState(false);
 
 	useEffect(() => {
@@ -27,14 +20,11 @@ const NavbarButton = ({
 			to={url}
 			onMouseEnter={() => setShowSectionName(true)}
 			onMouseLeave={() => setShowSectionName(false)}
-			onClick={() => {
-				isPopup && setToggleInfoModal((prev) => !prev);
-			}}
 			className="relative flex items-center justify-center w-10 h-10 text-2xl duration-200 hover:scale-125 sm:text-4xl"
 		>
 			{({ isActive }) => (
 				<>
-					{isActive && !isPopup ? activeIcon : icon}
+					{isActive ? activeIcon : icon}
 
 					<AnimatePresence>
 						{showSectionName && (
