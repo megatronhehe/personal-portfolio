@@ -33,7 +33,7 @@ const Contact = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			className="flex flex-col items-center justify-between h-screen py-8 sm:justify-around"
+			className="flex flex-col items-center justify-around h-screen py-8 sm:justify-around"
 		>
 			<div className="flex flex-col items-center justify-center gap-16">
 				<PiDiamondsFourFill />
