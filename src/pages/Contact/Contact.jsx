@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import ContactButton from "./ContactButton";
 
@@ -25,6 +25,14 @@ const Contact = () => {
 	const getNextQuote = () => {
 		setQuotesIndex((prev) => (prev >= quotesData.length - 1 ? 0 : prev + 1));
 	};
+
+	useEffect(() => {
+		const intervalId = setInterval(getNextQuote, 6000);
+
+		return () => {
+			clearInterval(intervalId);
+		};
+	}, []);
 
 	const selectedQuote = quotesData[quotesIndex];
 
