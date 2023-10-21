@@ -56,7 +56,7 @@ const Navbar = () => {
 
 			<button
 				onClick={() => setToggleInfoModal((prev) => !prev)}
-				className="fixed z-40 flex items-center justify-center text-2xl text-blue-300 sm:text-4xl top-2 right-2"
+				className="fixed z-40 flex items-center justify-center text-2xl text-gray-400 duration-200 hover:text-white hover:scale-110 sm:text-4xl top-2 right-2"
 			>
 				<PiInfoLight />
 			</button>
