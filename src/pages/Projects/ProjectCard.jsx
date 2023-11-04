@@ -23,11 +23,19 @@ const ProjectCard = ({ project }) => {
 					</h1>
 
 					<ul className="absolute left-0 flex justify-between w-full text-sm bottom-4">
-						<ProjectCardButton icon={<PiPlayFill />} url={project.sc} />
+						<ProjectCardButton
+							icon={<PiPlayFill />}
+							url={project.sc}
+							color="red-400"
+						/>
 
 						<ProjectCardButton icon={<PiImageLight />} setState={setShowInfo} />
 
-						<ProjectCardButton icon={<PiCode />} url={project.sc} />
+						<ProjectCardButton
+							icon={<PiCode />}
+							url={project.sc}
+							color="blue-400"
+						/>
 					</ul>
 
 					<button
