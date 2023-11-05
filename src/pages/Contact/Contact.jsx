@@ -22,12 +22,18 @@ import {
 const Contact = () => {
 	const [quotesIndex, setQuotesIndex] = useState(0);
 
-	const getNextQuote = () => {
-		setQuotesIndex((prev) => (prev >= quotesData.length - 1 ? 0 : prev + 1));
+	const getRandomQuote = () => {
+		const randomNumber = Math.floor(Math.random() * quotesData.length);
+
+		if (quotesIndex === randomNumber) {
+			return setQuotesIndex(randomNumber);
+		}
+
+		setQuotesIndex(randomNumber);
 	};
 
 	useEffect(() => {
-		const intervalId = setInterval(getNextQuote, 6000);
+		const intervalId = setInterval(getRandomQuote, 4000);
 
 		return () => {
 			clearInterval(intervalId);
@@ -105,7 +111,7 @@ const Contact = () => {
 					animate={{ rotate: 360 }}
 					transition={{ duration: 1.5 }}
 				>
-					<BsDiamond onClick={getNextQuote} />
+					<BsDiamond onClick={getRandomQuote} />
 				</motion.button>
 
 				<div className="h-20 ">
