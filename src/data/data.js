@@ -37,4 +37,9 @@ export const quotesData = [
 			"We never feel completely ready for life’s big decisions; but in taking the leap, we push ourselves to the next level.",
 		by: "Patrick Bet-David",
 	},
+	{
+		id: 8,
+		quote: "Don't be sorry, be better.",
+		by: "Kratos",
+	},
 ];
