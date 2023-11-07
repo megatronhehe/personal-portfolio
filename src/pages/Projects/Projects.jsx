@@ -29,8 +29,8 @@ const About = () => {
 					</h2>
 					<div className="flex flex-col items-center justify-center max-w-xl gap-4 px-6 text-sm text-center h-1/2">
 						<p>
-							Here are some of my featured projects. All the of the projects are
-							originally made by me, my own code, and my own design.
+							Here are some of my featured projects originally made by me with
+							my own code and my own design.
 						</p>
 
 						<a
