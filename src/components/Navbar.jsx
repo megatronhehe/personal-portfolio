@@ -54,12 +54,13 @@ const Navbar = () => {
 				<PiSquaresFourFill />
 			</motion.button>
 
-			<button
+			<motion.button
+				whileHover={{ x: -4, y: 4, scale: 1.1 }}
 				onClick={() => setToggleInfoModal((prev) => !prev)}
-				className="fixed z-40 flex items-center justify-center text-2xl text-gray-400 duration-200 hover:text-white hover:scale-110 sm:text-4xl top-2 right-2"
+				className="fixed z-40 flex items-center justify-center text-2xl text-gray-400 hover:text-white sm:text-4xl top-2 right-2"
 			>
 				<PiInfoLight />
-			</button>
+			</motion.button>
 
 			<AnimatePresence>
 				{toggleNavbar && (
