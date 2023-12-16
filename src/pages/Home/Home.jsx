@@ -4,7 +4,7 @@ import satya3 from "../../assets/satyajpg3.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { PiDiamondsFourFill, PiArrowSquareOutLight } from "react-icons/pi";
+import { PiDiamondsFourFill } from "react-icons/pi";
 import BiodataModal from "./BiodataModal";
 import ResumeButton from "./ResumeButton";
 
